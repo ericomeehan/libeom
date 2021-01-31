@@ -6,8 +6,19 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		07BF311C25C7324200A41C5D /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF311A25C7324200A41C5D /* Node.h */; };
+		07BF311D25C7324200A41C5D /* Node.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF311B25C7324200A41C5D /* Node.c */; };
+		07BF312225C732C300A41C5D /* LinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF312025C732C300A41C5D /* LinkedList.h */; };
+		07BF312325C732C300A41C5D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF312125C732C300A41C5D /* LinkedList.c */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		07BF311125C72F0D00A41C5D /* libhdelibc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libhdelibc.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BF311A25C7324200A41C5D /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		07BF311B25C7324200A41C5D /* Node.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Node.c; sourceTree = "<group>"; };
+		07BF312025C732C300A41C5D /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
+		07BF312125C732C300A41C5D /* LinkedList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkedList.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +35,7 @@
 		07BF310825C72F0D00A41C5D = {
 			isa = PBXGroup;
 			children = (
+				07BF311925C7321500A41C5D /* DataStructures */,
 				07BF311225C72F0D00A41C5D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,6 +48,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		07BF311925C7321500A41C5D /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				07BF311A25C7324200A41C5D /* Node.h */,
+				07BF311B25C7324200A41C5D /* Node.c */,
+				07BF312025C732C300A41C5D /* LinkedList.h */,
+				07BF312125C732C300A41C5D /* LinkedList.c */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -43,6 +66,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BF311C25C7324200A41C5D /* Node.h in Headers */,
+				07BF312225C732C300A41C5D /* LinkedList.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +127,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BF312325C732C300A41C5D /* LinkedList.c in Sources */,
+				07BF311D25C7324200A41C5D /* Node.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
