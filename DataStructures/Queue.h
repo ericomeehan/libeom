@@ -14,8 +14,9 @@ struct Queue
 {
     struct LinkedList list;
     
-    void (*push)(void *data, struct Queue *queue);
-    void * (*pop)(struct Queue *queue);
+    void (*push)(struct Queue *queue, void *data, int data_type, int size);
+    void * (*peek)(struct Queue *queue);
+    void (*pop)(struct Queue *queue);
 };
 
 struct Queue queue_constructor(void);

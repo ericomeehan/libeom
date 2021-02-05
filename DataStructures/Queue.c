@@ -8,16 +8,20 @@
 #include "Queue.h"
 
 
-void push(void *data, struct Queue *queue)
+void push(struct Queue *queue, void *data, int data_type, int size)
 {
-    queue->list.insert(queue->list.length, data, &queue->list);
+    queue->list.insert(&queue->list, queue->list.length, data, data_type, size);
 }
 
-void * pop(struct Queue *queue)
+void * peek(struct Queue *queue)
 {
-    void *data = queue->list.retrieve(0, &queue->list);
-    queue->list.remove(0, &queue->list);
+    void *data = queue->list.retrieve(&queue->list, 0);
     return data;
+}
+
+void pop(struct Queue *queue)
+{
+    queue->list.remove(&queue->list, 0);
 }
 
 struct Queue queue_constructor()
@@ -26,6 +30,7 @@ struct Queue queue_constructor()
     queue.list = linked_list_constructor();
     
     queue.push = push;
+    queue.peek = peek;
     queue.pop = pop;
     
     return queue;
