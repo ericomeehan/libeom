@@ -40,6 +40,7 @@ struct Node * create_node(void *data, int data_type, int size)
 {
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
     *new_node = node_constructor(data, data_type, size);
+    printf("%p\n", new_node->data);
     return new_node;
 }
 

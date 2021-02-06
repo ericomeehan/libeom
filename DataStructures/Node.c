@@ -52,14 +52,17 @@ struct Node node_constructor(void *data, int data_type, int size)
             {
                 ((double *)node.data)[i] = ((double *)data)[i];
             }
+            break;
         }
         case Char:
         {
-            node.data = malloc(sizeof(char) * size);
+            node.data = malloc(sizeof(char) * size + 1);
             for (int i = 0; i < size; i++)
             {
                 ((char *)node.data)[i] = ((char *)data)[i];
             }
+            ((char *)node.data)[size] = 0;
+            break;
         }
         case Bool:
         {
@@ -68,6 +71,7 @@ struct Node node_constructor(void *data, int data_type, int size)
             {
                 ((bool *)node.data)[i] = ((bool *)data)[i];
             }
+            break;
         }
         default:
         {
@@ -84,5 +88,6 @@ struct Node node_constructor(void *data, int data_type, int size)
 
 void node_destructor(struct Node *node)
 {
+    free(node->data);
     free(node);
 }
