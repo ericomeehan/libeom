@@ -16,13 +16,13 @@ int main()
         
     for (int i = 0; i < 10; i++)
     {
-        char x = 'i';
-        list.push(&list, &x, Char, 1);
+        char x[5] = "Hello";
+        list.push(&list, &x, Char, 5);
     }
         
     for (int i = 0; i < 10; i++)
     {
-        printf("%c\n", *(char *)list.peek(&list));
+        printf("%s\n", (char *)list.peek(&list));
         list.pop(&list);
     }
     
