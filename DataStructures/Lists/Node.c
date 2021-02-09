@@ -22,7 +22,8 @@ struct Node node_constructor(void *data, int data_type, int size)
     // Create a Node instance to be returned
     struct Node node;
     // Allocate space for the data if it is of a supported type
-    switch (data_type) {
+    switch (data_type)
+    {
         case Int:
         {
             // Allocate space - the size of the data type is multiplied by the size to accommodate arrays.

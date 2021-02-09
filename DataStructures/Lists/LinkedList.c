@@ -22,7 +22,7 @@ void destroy_node(struct Node *node_to_destroy);
 /* PUBLIC MEMBER METHODS */
 struct Node * iterate(struct LinkedList *linked_list, int index);
 void insert(struct LinkedList *linked_list, int index, void *data, int data_type, int size);
-void remove(struct LinkedList *linked_list, int index);
+void remove_node(struct LinkedList *linked_list, int index);
 void * retrieve(struct LinkedList *linked_list, int index);
 
 
@@ -35,7 +35,7 @@ struct LinkedList linked_list_constructor()
     new_list.length = 0;
     
     new_list.insert = insert;
-    new_list.remove = remove;
+    new_list.remove = remove_node;
     new_list.retrieve = retrieve;
     
     return new_list;
@@ -120,7 +120,7 @@ void insert(struct LinkedList *linked_list, int index, void *data, int data_type
 }
 
 // The remove function removes a node from the linked list.
-void remove(struct LinkedList *linked_list, int index)
+void remove_node(struct LinkedList *linked_list, int index)
 {
     // Check if the item being removed is the head.
     if (index == 0)
