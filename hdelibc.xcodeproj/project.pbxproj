@@ -16,6 +16,9 @@
 		07BF312325C732C300A41C5D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF312125C732C300A41C5D /* LinkedList.c */; };
 		07BF315925CB344800A41C5D /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF315725CB344800A41C5D /* Queue.h */; };
 		07BF315A25CB344800A41C5D /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF315825CB344800A41C5D /* Queue.c */; };
+		07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EEDA1E25D3244700078FED /* HTTPRequest.h */; };
+		07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EEDA1F25D3244700078FED /* HTTPRequest.c */; };
+		07EEDA2425D3617900078FED /* t.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EEDA2325D3617900078FED /* t.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		07BF312125C732C300A41C5D /* LinkedList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkedList.c; sourceTree = "<group>"; };
 		07BF315725CB344800A41C5D /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		07BF315825CB344800A41C5D /* Queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
+		07EEDA1E25D3244700078FED /* HTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
+		07EEDA1F25D3244700078FED /* HTTPRequest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HTTPRequest.c; sourceTree = "<group>"; };
+		07EEDA2325D3617900078FED /* t.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = t.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,9 @@
 				0737A2F625D06F85009CCE74 /* Server.h */,
 				0737A2F725D06F85009CCE74 /* Server.c */,
 				0737A2FC25D073ED009CCE74 /* test.c */,
+				07EEDA1E25D3244700078FED /* HTTPRequest.h */,
+				07EEDA1F25D3244700078FED /* HTTPRequest.c */,
+				07EEDA2325D3617900078FED /* t.c */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -102,6 +111,7 @@
 				07BF315925CB344800A41C5D /* Queue.h in Headers */,
 				0737A2F825D06F85009CCE74 /* Server.h in Headers */,
 				07BF311C25C7324200A41C5D /* Node.h in Headers */,
+				07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */,
 				07BF312225C732C300A41C5D /* LinkedList.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,9 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				07BF315A25CB344800A41C5D /* Queue.c in Sources */,
+				07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */,
 				070973D525CCF85800343E54 /* Node.c in Sources */,
 				0737A2FD25D073ED009CCE74 /* test.c in Sources */,
 				07BF312325C732C300A41C5D /* LinkedList.c in Sources */,
+				07EEDA2425D3617900078FED /* t.c in Sources */,
 				0737A2F925D06F85009CCE74 /* Server.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
