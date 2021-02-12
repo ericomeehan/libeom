@@ -23,7 +23,7 @@
 #ifndef LinkedList_h
 #define LinkedList_h
 
-#include "Node.h"
+#include "../Common/Node.h"
 
 
 
@@ -40,7 +40,7 @@ struct LinkedList
     
     /* PUBLIC MEMBER METHODS */
     // Insert adds new items to the chain at a specified location - this function creates the new nodes.
-    void (*insert)(struct LinkedList *linked_list, int index, void *data, int data_type, int size);
+    void (*insert)(struct LinkedList *linked_list, int index, void *data, int size);
     // Remove deletes an item from the chain and handles the deallocation of memory.
     void (*remove)(struct LinkedList *linked_list, int index);
     // Retrieve allows data in the chain to be accessed

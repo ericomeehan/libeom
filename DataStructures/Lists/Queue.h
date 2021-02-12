@@ -32,7 +32,7 @@ struct Queue
     
     /* PUBLIC MEMBER METHODS */
     // The push function adds a node to the end of the chain.
-    void (*push)(struct Queue *queue, void *data, int data_type, int size);
+    void (*push)(struct Queue *queue, void *data, int size);
     // The peek function retrieves the data from the front of the list.
     void * (*peek)(struct Queue *queue);
     // The pop function removes the first item in the list.

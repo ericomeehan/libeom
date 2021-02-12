@@ -9,7 +9,7 @@
 
 
 /* PUBLIC METHODS */
-void push(struct Queue *queue, void *data, int data_type, int size);
+void push(struct Queue *queue, void *data, int size);
 void * peek(struct Queue *queue);
 void pop (struct Queue *queue);
 
@@ -42,10 +42,10 @@ void queue_destructor(struct Queue *queue)
 /* PUBLIC METHODS */
 
 // The push method adds an item to the end of the list.
-void push(struct Queue *queue, void *data, int data_type, int size)
+void push(struct Queue *queue, void *data, int size)
 {
     // Utilize insert from LinkedList with enforced parameters.
-    queue->list.insert(&queue->list, queue->list.length, data, data_type, size);
+    queue->list.insert(&queue->list, queue->list.length, data, size);
 }
 
 // The peek function returns the data from the first item in the chain.

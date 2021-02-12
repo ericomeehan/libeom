@@ -14,14 +14,14 @@
 
 /* PRIVATE METHODS */
 
-struct Node * create_node(void *data, int data_type, int size);
+struct Node * create_node(void *data, int size);
 void destroy_node(struct Node *node_to_destroy);
 
 
 
 /* PUBLIC MEMBER METHODS */
 struct Node * iterate(struct LinkedList *linked_list, int index);
-void insert(struct LinkedList *linked_list, int index, void *data, int data_type, int size);
+void insert(struct LinkedList *linked_list, int index, void *data, int size);
 void remove_node(struct LinkedList *linked_list, int index);
 void * retrieve(struct LinkedList *linked_list, int index);
 
@@ -54,12 +54,12 @@ void linked_list_destructor(struct LinkedList *linked_list)
 /* PRIVATE METHODS */
 
 // The create_node function creates a new node to add to the chain by allocating space on the heap and calling the node constructor.
-struct Node * create_node(void *data, int data_type, int size)
+struct Node * create_node(void *data, int size)
 {
     // Allocate space.
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
     // Call the constructor.
-    *new_node = node_constructor(data, data_type, size);
+    *new_node = node_constructor(data, size);
     return new_node;
 }
 
@@ -93,10 +93,10 @@ struct Node * iterate(struct LinkedList *linked_list, int index)
 /* PUBLIC METHODS */
 
 // The insert function puts a new node in the chain.
-void insert(struct LinkedList *linked_list, int index, void *data, int data_type, int size)
+void insert(struct LinkedList *linked_list, int index, void *data, int size)
 {
     // Create a new node to be inserted.
-    struct Node *node_to_insert = create_node(data, data_type, size);
+    struct Node *node_to_insert = create_node(data, size);
     // Check if this node will be the new head of the list.
     if (index == 0)
     {
