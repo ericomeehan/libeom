@@ -11,23 +11,22 @@
 #include "LinkedList.h"
 
 
-
 /* PRIVATE METHODS */
 
 struct Node * create_node(void *data, int size);
 void destroy_node(struct Node *node_to_destroy);
 
 
-
 /* PUBLIC MEMBER METHODS */
+
 struct Node * iterate(struct LinkedList *linked_list, int index);
 void insert(struct LinkedList *linked_list, int index, void *data, int size);
 void remove_node(struct LinkedList *linked_list, int index);
 void * retrieve(struct LinkedList *linked_list, int index);
 
 
-
 /* CONSTRUCTORS */
+
 struct LinkedList linked_list_constructor()
 {
     struct LinkedList new_list;

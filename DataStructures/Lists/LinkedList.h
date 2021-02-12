@@ -6,7 +6,7 @@
 //
 
 /*
- The LinkedList struct is a collection of nodes, each pointing to the next one in the chain.
+ The LinkedList struct is a collection of Nodes, each pointing to the next one in the chain.
  This is a dynamic implementation of a linked list - it does not enforce ubiquitous data types and can be resized at any point.
  
  The object handles the creation and destruction of nodes automatically, allowing the user to simply insert the desired data.
@@ -24,8 +24,6 @@
 #define LinkedList_h
 
 #include "../Common/Node.h"
-
-
 
 /* DATA TYPES */
 
