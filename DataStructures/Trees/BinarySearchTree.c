@@ -100,7 +100,7 @@ struct Node * iterate(struct BinarySearchTree *tree, struct Node *cursor, void *
     else
     {
         // Set direction.
-        direction = 0;
+        *direction = 0;
         // Return the node.
         return cursor;
     }
