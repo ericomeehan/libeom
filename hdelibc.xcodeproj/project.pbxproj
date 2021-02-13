@@ -12,6 +12,7 @@
 		070A830125D70F5F00E97DE2 /* Entry.c in Sources */ = {isa = PBXBuildFile; fileRef = 070A82FF25D70F5F00E97DE2 /* Entry.c */; };
 		070A830625D710EC00E97DE2 /* Dictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A830425D710EC00E97DE2 /* Dictionary.h */; };
 		070A830725D710EC00E97DE2 /* Dictionary.c in Sources */ = {isa = PBXBuildFile; fileRef = 070A830525D710EC00E97DE2 /* Dictionary.c */; };
+		070A830C25D7752400E97DE2 /* hdelibc-datastructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A830A25D7752400E97DE2 /* hdelibc-datastructures.h */; };
 		0737A2F825D06F85009CCE74 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 0737A2F625D06F85009CCE74 /* Server.h */; };
 		0737A2F925D06F85009CCE74 /* Server.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2F725D06F85009CCE74 /* Server.c */; };
 		0737A2FD25D073ED009CCE74 /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2FC25D073ED009CCE74 /* test.c */; };
@@ -33,6 +34,8 @@
 		070A82FF25D70F5F00E97DE2 /* Entry.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Entry.c; sourceTree = "<group>"; };
 		070A830425D710EC00E97DE2 /* Dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dictionary.h; sourceTree = "<group>"; };
 		070A830525D710EC00E97DE2 /* Dictionary.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Dictionary.c; sourceTree = "<group>"; };
+		070A830925D769B700E97DE2 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
+		070A830A25D7752400E97DE2 /* hdelibc-datastructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hdelibc-datastructures.h"; sourceTree = "<group>"; };
 		0737A2DE25CE316E009CCE74 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0737A2F625D06F85009CCE74 /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		0737A2F725D06F85009CCE74 /* Server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Server.c; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		07BF310825C72F0D00A41C5D = {
 			isa = PBXGroup;
 			children = (
+				070A830925D769B700E97DE2 /* Makefile */,
 				0737A2DE25CE316E009CCE74 /* README.md */,
 				07BF311925C7321500A41C5D /* DataStructures */,
 				0737A2F525D06F73009CCE74 /* Networking */,
@@ -135,6 +139,7 @@
 		07BF311925C7321500A41C5D /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				070A830A25D7752400E97DE2 /* hdelibc-datastructures.h */,
 				070A82FD25D70F3600E97DE2 /* Dictionary */,
 				0768DF3025D5C5C800410685 /* Common */,
 				0768DF2F25D5C5A100410685 /* Trees */,
@@ -152,6 +157,7 @@
 			files = (
 				070A830625D710EC00E97DE2 /* Dictionary.h in Headers */,
 				07BF315925CB344800A41C5D /* Queue.h in Headers */,
+				070A830C25D7752400E97DE2 /* hdelibc-datastructures.h in Headers */,
 				070A830025D70F5F00E97DE2 /* Entry.h in Headers */,
 				0737A2F825D06F85009CCE74 /* Server.h in Headers */,
 				07BF311C25C7324200A41C5D /* Node.h in Headers */,

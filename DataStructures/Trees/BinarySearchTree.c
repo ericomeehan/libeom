@@ -7,6 +7,8 @@
 
 #include "BinarySearchTree.h"
 
+#include <stdlib.h>
+
 // MARK: PROTOTYPES
 
 // MARK: Private Member Methods

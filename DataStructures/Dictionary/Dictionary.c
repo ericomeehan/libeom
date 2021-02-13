@@ -7,6 +7,7 @@
 
 #include "Dictionary.h"
 
+#include <stdlib.h>
 
 // MARK: FUNCTION PROTOTYPES
 // Insert adds items to the dictionary - the user does not need to implement Elements themselves.
