@@ -25,7 +25,7 @@
 
 #include "../Common/Node.h"
 
-/* DATA TYPES */
+// MARK: DATA TYPES
 
 // LinkedLists are used to move between and manipulate related nodes in an organized fashion.
 struct LinkedList
@@ -47,7 +47,7 @@ struct LinkedList
 
 
 
-/* CONSTRUCTORS */
+// MARK: CONSTRUCTORS 
 struct LinkedList linked_list_constructor(void);
 void linked_list_destructor(struct LinkedList *linked_list);
 

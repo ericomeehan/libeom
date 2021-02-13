@@ -8,14 +8,14 @@
 #include "Queue.h"
 
 
-/* PUBLIC METHODS */
+// MARK: FUNCTION PROTOTYPES
+
 void push(struct Queue *queue, void *data, int size);
 void * peek(struct Queue *queue);
 void pop (struct Queue *queue);
 
 
-
-/* CONSTRUCTORS */
+// MARK: CONSTRUCTORS
 
 struct Queue queue_constructor()
 {
@@ -39,7 +39,7 @@ void queue_destructor(struct Queue *queue)
 
 
 
-/* PUBLIC METHODS */
+// MARK: PUBLIC METHODS
 
 // The push method adds an item to the end of the list.
 void push(struct Queue *queue, void *data, int size)

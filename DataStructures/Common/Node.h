@@ -22,13 +22,7 @@
 #ifndef Node_h
 #define Node_h
 
-#include <stdlib.h>
-#include <stdbool.h>
-#include <stdio.h>
-
-
-
-/* DATA TYPES */
+// MARK: DATA TYPES
 
 // Nodes are used to store data of any type in a list.  
 struct Node
@@ -42,7 +36,7 @@ struct Node
 };
 
 
-/* METHODS */
+// MARK: CONSTRUCTORS
 
 // The constructor should be used to create nodes.
 struct Node node_constructor(void *data, int size);

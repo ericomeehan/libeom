@@ -21,7 +21,7 @@
 #include "LinkedList.h"
 
 
-/* DATA TYPES */
+// MARK: DATA TYPES
 
 // Queues are used to access a linked list in a controlled manner.
 struct Queue
@@ -41,7 +41,7 @@ struct Queue
 
 
 
-/* CONSTRUCTORS */
+// MARK: CONSTRUCTORS
 
 // The constructor should be used to create new Queue instances.
 struct Queue queue_constructor(void);

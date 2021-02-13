@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		070973D525CCF85800343E54 /* Node.c in Sources */ = {isa = PBXBuildFile; fileRef = 070973D425CCF85800343E54 /* Node.c */; };
+		070A830025D70F5F00E97DE2 /* Entry.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A82FE25D70F5F00E97DE2 /* Entry.h */; };
+		070A830125D70F5F00E97DE2 /* Entry.c in Sources */ = {isa = PBXBuildFile; fileRef = 070A82FF25D70F5F00E97DE2 /* Entry.c */; };
+		070A830625D710EC00E97DE2 /* Dictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A830425D710EC00E97DE2 /* Dictionary.h */; };
+		070A830725D710EC00E97DE2 /* Dictionary.c in Sources */ = {isa = PBXBuildFile; fileRef = 070A830525D710EC00E97DE2 /* Dictionary.c */; };
 		0737A2F825D06F85009CCE74 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 0737A2F625D06F85009CCE74 /* Server.h */; };
 		0737A2F925D06F85009CCE74 /* Server.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2F725D06F85009CCE74 /* Server.c */; };
 		0737A2FD25D073ED009CCE74 /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2FC25D073ED009CCE74 /* test.c */; };
@@ -25,6 +29,10 @@
 
 /* Begin PBXFileReference section */
 		070973D425CCF85800343E54 /* Node.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Node.c; sourceTree = "<group>"; };
+		070A82FE25D70F5F00E97DE2 /* Entry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		070A82FF25D70F5F00E97DE2 /* Entry.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Entry.c; sourceTree = "<group>"; };
+		070A830425D710EC00E97DE2 /* Dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dictionary.h; sourceTree = "<group>"; };
+		070A830525D710EC00E97DE2 /* Dictionary.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Dictionary.c; sourceTree = "<group>"; };
 		0737A2DE25CE316E009CCE74 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0737A2F625D06F85009CCE74 /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		0737A2F725D06F85009CCE74 /* Server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Server.c; sourceTree = "<group>"; };
@@ -53,6 +61,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070A82FD25D70F3600E97DE2 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				070A82FE25D70F5F00E97DE2 /* Entry.h */,
+				070A82FF25D70F5F00E97DE2 /* Entry.c */,
+				070A830425D710EC00E97DE2 /* Dictionary.h */,
+				070A830525D710EC00E97DE2 /* Dictionary.c */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
 		0737A2DD25CE3156009CCE74 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +135,7 @@
 		07BF311925C7321500A41C5D /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				070A82FD25D70F3600E97DE2 /* Dictionary */,
 				0768DF3025D5C5C800410685 /* Common */,
 				0768DF2F25D5C5A100410685 /* Trees */,
 				0737A2DD25CE3156009CCE74 /* Lists */,
@@ -130,7 +150,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070A830625D710EC00E97DE2 /* Dictionary.h in Headers */,
 				07BF315925CB344800A41C5D /* Queue.h in Headers */,
+				070A830025D70F5F00E97DE2 /* Entry.h in Headers */,
 				0737A2F825D06F85009CCE74 /* Server.h in Headers */,
 				07BF311C25C7324200A41C5D /* Node.h in Headers */,
 				0768DF3325D5C5EF00410685 /* BinarySearchTree.h in Headers */,
@@ -195,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070A830125D70F5F00E97DE2 /* Entry.c in Sources */,
 				07BF315A25CB344800A41C5D /* Queue.c in Sources */,
 				07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */,
 				070973D525CCF85800343E54 /* Node.c in Sources */,
@@ -203,6 +226,7 @@
 				07EEDA2425D3617900078FED /* t.c in Sources */,
 				0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */,
 				0737A2F925D06F85009CCE74 /* Server.c in Sources */,
+				070A830725D710EC00E97DE2 /* Dictionary.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

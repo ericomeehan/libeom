@@ -8,9 +8,11 @@
 
 #include "Node.h"
 
+#include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
-/* METHODS */
+// MARK: CONSTRUCTORS
 
 // The constructor is used to create new instances of nodes.
 struct Node node_constructor(void *data, int size)

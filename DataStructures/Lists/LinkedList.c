@@ -11,13 +11,15 @@
 #include "LinkedList.h"
 
 
-/* PRIVATE METHODS */
+// MARK: FUNCTION PROTOTYPES
+
+// MARK: Private Member Methods
 
 struct Node * create_node(void *data, int size);
 void destroy_node(struct Node *node_to_destroy);
 
 
-/* PUBLIC MEMBER METHODS */
+// MARK: Public Member Methods
 
 struct Node * iterate(struct LinkedList *linked_list, int index);
 void insert(struct LinkedList *linked_list, int index, void *data, int size);
@@ -25,7 +27,7 @@ void remove_node(struct LinkedList *linked_list, int index);
 void * retrieve(struct LinkedList *linked_list, int index);
 
 
-/* CONSTRUCTORS */
+// MARK: CONSTRUCTORS
 
 struct LinkedList linked_list_constructor()
 {
@@ -50,7 +52,7 @@ void linked_list_destructor(struct LinkedList *linked_list)
 
 
 
-/* PRIVATE METHODS */
+// MARK: PRIVATE METHODS
 
 // The create_node function creates a new node to add to the chain by allocating space on the heap and calling the node constructor.
 struct Node * create_node(void *data, int size)
@@ -89,7 +91,7 @@ struct Node * iterate(struct LinkedList *linked_list, int index)
 
 
 
-/* PUBLIC METHODS */
+// MARK: PUBLIC METHODS
 
 // The insert function puts a new node in the chain.
 void insert(struct LinkedList *linked_list, int index, void *data, int size)
