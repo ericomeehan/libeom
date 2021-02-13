@@ -8,6 +8,10 @@
 // Eric Meehan
 //
 
+/*
+ This header file contains all of the components for the DataStructures sub-module.
+ */
+
 #ifndef hdelibc_datastructures_h
 #define hdelibc_datastructures_h
 
