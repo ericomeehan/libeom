@@ -1,8 +1,11 @@
 //
-//  Entry.h
-//  hdelibc
+// Homo Deus
+// 2/12/21
 //
-//  Created by Eric Meehan on 2/12/21.
+// Homo Deus C Library
+// Entry.h
+//
+// Eric Meehan
 //
 
 #ifndef Entry_h

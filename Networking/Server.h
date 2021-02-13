@@ -1,8 +1,11 @@
 //
-//  Server.h
-//  hdelibc
+// Homo Deus
+// 2/7/21
 //
-//  Created by Eric Meehan on 2/7/21.
+// Homo Deus C Library
+// Server.h
+//
+// Eric Meehan
 //
 
 #ifndef Server_h

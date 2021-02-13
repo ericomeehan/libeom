@@ -1,8 +1,11 @@
 //
-//  hdelibc-datastructures.h
-//  hdelibc
+// Homo Deus
+// 2/12/21
 //
-//  Created by Eric Meehan on 2/12/21.
+// Homo Deus C Library
+// hdelibc-datastructures.h
+//
+// Eric Meehan
 //
 
 #ifndef hdelibc_datastructures_h

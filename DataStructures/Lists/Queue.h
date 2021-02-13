@@ -1,8 +1,11 @@
 //
-//  Queue.h
-//  hdelibc
+// Homo Deus
+// 2/3/21
 //
-//  Created by Eric Meehan on 2/3/21.
+// Homo Deus C Library
+// Queue.h
+//
+// Eric Meehan
 //
 
 /*

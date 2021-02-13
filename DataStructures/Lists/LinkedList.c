@@ -1,8 +1,11 @@
 //
-//  LinkedList.c
-//  hdelibc
+// Homo Deus
+// 1/31/21
 //
-//  Created by Eric Meehan on 1/31/21.
+// Homo Deus C Library
+// LinkedList.c
+//
+// Eric Meehan
 //
 
 #include <stdlib.h>

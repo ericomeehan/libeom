@@ -1,8 +1,11 @@
 //
-//  HTTPRequest.c
-//  hdelibc
+// Homo Deus
+// 2/9/21
 //
-//  Created by Eric Meehan on 2/9/21.
+// Homo Deus C Library
+// HTTPRequest.c
+//
+// Eric Meehan
 //
 
 #include "HTTPRequest.h"

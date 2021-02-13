@@ -1,8 +1,11 @@
 //
-//  BinarySearchTree.h
-//  hdelibc
+// Homo Deus
+// 2/11/21
 //
-//  Created by Eric Meehan on 2/11/21.
+// Homo Deus C Library
+// BinarySearchTree.h
+//
+// Eric Meehan
 //
 
 /*

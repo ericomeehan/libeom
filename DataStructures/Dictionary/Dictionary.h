@@ -1,8 +1,11 @@
 //
-//  Dictionary.h
-//  hdelibc
+// Homo Deus
+// 2/12/21
 //
-//  Created by Eric Meehan on 2/12/21.
+// Homo Deus C Library
+// Dictionary.h
+//
+// Eric Meehan
 //
 
 #ifndef Dictionary_h

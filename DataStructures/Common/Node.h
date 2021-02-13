@@ -1,8 +1,11 @@
 //
-//  Node.h
-//  hdelibc
+// Homo Deus
+// 1/31/21
 //
-//  Created by Eric Meehan on 1/31/21.
+// Homo Deus C Library
+// Node.h
+//
+// Eric Meehan
 //
 
 /*
