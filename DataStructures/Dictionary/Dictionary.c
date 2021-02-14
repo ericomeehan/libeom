@@ -12,11 +12,9 @@
 
 #include <stdlib.h>
 
-#include <stdio.h>
-
 // MARK: FUNCTION PROTOTYPES
 // Insert adds items to the dictionary - the user does not need to implement Elements themselves.
-void insert(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size);
+void insert_dict(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size);
 // Search finds the value for a given key in the Dictionary.
 void * search_dict(struct Dictionary *dictionary, void *key, int key_size);
 
@@ -25,7 +23,7 @@ struct Dictionary dictionary_constructor(int (*compare)(void *key_one, void *key
 {
     struct Dictionary dictionary;
     dictionary.binary_search_tree = binary_search_tree_constructor(compare);
-    dictionary.insert = insert;
+    dictionary.insert = insert_dict;
     dictionary.search = search_dict;
     return dictionary;
 }
@@ -50,12 +48,10 @@ void * search_dict(struct Dictionary *dictionary, void *key, int key_size)
 }
 
 
-void insert(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size)
+void insert_dict(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size)
 {
     // Create a new Entry.
     struct Entry entry = entry_constructor(key, key_size, value, value_size);
-    printf("%s  %d\n", (char *)entry.key, *(int *)entry.value);
-
     // Insert that entry into the tree.
     dictionary->binary_search_tree.insert(&dictionary->binary_search_tree, &entry, sizeof(entry));
 }

@@ -16,8 +16,9 @@
 
 // MARK: Private Member Methods
 
-struct Node * create_node(void *data, int size);
-void destroy_node(struct Node *node_to_destroy);
+struct Node * create_node_bst(void *data, int size);
+void destroy_node_bst(struct Node *node_to_destroy);
+struct Node * iterate_bst(struct BinarySearchTree *tree, struct Node *cursor, void *data, int *direction);
 
 
 // MARK: Public Member Methods
@@ -44,7 +45,7 @@ struct BinarySearchTree binary_search_tree_constructor(int (*compare)(void *data
 // MARK: Private Member Methods
 
 // The create_node allocates space on the heap for a node and uses the Node constructor to instantiate it.
-struct Node * create_node(void *data, int size)
+struct Node * create_node_bst(void *data, int size)
 {
     // Allocate space.
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
@@ -54,7 +55,7 @@ struct Node * create_node(void *data, int size)
 }
 
 // The destroy_node function removes a node by deallocating it's memory address.  This simply renames the node destructor function.
-void destroy_node(struct Node *node_to_destroy)
+void destroy_node_bst(struct Node *node_to_destroy)
 {
     node_destructor(node_to_destroy);
 }
@@ -64,7 +65,7 @@ void destroy_node(struct Node *node_to_destroy)
 // The user must take care to insrue this function returns the node they are actually looking for.
 // The function takes a reference to the BinarySearchTree, the current position, desired data, and an int pointer as arguments.
 // The int pointer becomes 1 if the desired data is greater than the returned node, -1 if it is less than, and 0 if they are equal.
-struct Node * iterate(struct BinarySearchTree *tree, struct Node *cursor, void *data, int *direction)
+struct Node * iterate_bst(struct BinarySearchTree *tree, struct Node *cursor, void *data, int *direction)
 {
     // Compare the cursor's data to the desired data.
     if (tree->compare(cursor->data, data) == 1)
@@ -73,7 +74,7 @@ struct Node * iterate(struct BinarySearchTree *tree, struct Node *cursor, void *
         if (cursor->next)
         {
             // Recursively test the next (right) node.
-            return iterate(tree, cursor->next, data, direction);
+            return iterate_bst(tree, cursor->next, data, direction);
         }
         else
         {
@@ -90,7 +91,7 @@ struct Node * iterate(struct BinarySearchTree *tree, struct Node *cursor, void *
         if (cursor->previous)
         {
             // Recursively test the previous (left) node.
-            return iterate(tree, cursor->previous, data, direction);
+            return iterate_bst(tree, cursor->previous, data, direction);
         }
         else
         {
@@ -119,7 +120,7 @@ void * search_bst(struct BinarySearchTree *tree, void *data)
     // Set the direction int pointer.
     int direction = 0;
     // Utilize iterate to find the desired position.
-    struct Node *cursor = iterate(tree, tree->head, data, &direction);
+    struct Node *cursor = iterate_bst(tree, tree->head, data, &direction);
     // Test if the found node is the desired node, or an adjacent one.
     if (direction == 0)
     {
@@ -137,22 +138,22 @@ void insert_bst(struct BinarySearchTree *tree, void *data, int size)
     // Check if this is the first node in the tree.
     if (!tree->head)
     {
-        tree->head = create_node(data, size);
+        tree->head = create_node_bst(data, size);
     }
     else
     {
         // Set the direction int pointer.
         int direction = 0;
         // Find the desired position.
-        struct Node *cursor = iterate(tree, tree->head, data, &direction);
+        struct Node *cursor = iterate_bst(tree, tree->head, data, &direction);
         // Check if the new node should be inserted to the left or right.
         if (direction == 1)
         {
-            cursor->next = create_node(data, size);
+            cursor->next = create_node_bst(data, size);
         }
         else if (direction == -1)
         {
-            cursor->previous = create_node(data, size);
+            cursor->previous = create_node_bst(data, size);
         }
         // Duplicate nodes will not be added.
     }

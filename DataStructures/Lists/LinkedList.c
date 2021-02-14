@@ -18,16 +18,16 @@
 
 // MARK: Private Member Methods
 
-struct Node * create_node(void *data, int size);
-void destroy_node(struct Node *node_to_destroy);
+struct Node * create_node_ll(void *data, int size);
+void destroy_node_ll(struct Node *node_to_destroy);
 
 
 // MARK: Public Member Methods
 
-struct Node * iterate(struct LinkedList *linked_list, int index);
-void insert(struct LinkedList *linked_list, int index, void *data, int size);
-void remove_node(struct LinkedList *linked_list, int index);
-void * retrieve(struct LinkedList *linked_list, int index);
+struct Node * iterate_ll(struct LinkedList *linked_list, int index);
+void insert_ll(struct LinkedList *linked_list, int index, void *data, int size);
+void remove_node_ll(struct LinkedList *linked_list, int index);
+void * retrieve_ll(struct LinkedList *linked_list, int index);
 
 
 // MARK: CONSTRUCTORS
@@ -38,9 +38,9 @@ struct LinkedList linked_list_constructor()
     new_list.head = NULL;
     new_list.length = 0;
     
-    new_list.insert = insert;
-    new_list.remove = remove_node;
-    new_list.retrieve = retrieve;
+    new_list.insert = insert_ll;
+    new_list.remove = remove_node_ll;
+    new_list.retrieve = retrieve_ll;
     
     return new_list;
 }
@@ -58,7 +58,7 @@ void linked_list_destructor(struct LinkedList *linked_list)
 // MARK: PRIVATE METHODS
 
 // The create_node function creates a new node to add to the chain by allocating space on the heap and calling the node constructor.
-struct Node * create_node(void *data, int size)
+struct Node * create_node_ll(void *data, int size)
 {
     // Allocate space.
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
@@ -68,13 +68,13 @@ struct Node * create_node(void *data, int size)
 }
 
 // The destroy_node function removes a node by deallocating it's memory address.  This simply renames the node destructor function.
-void destroy_node(struct Node *node_to_destroy)
+void destroy_node_ll(struct Node *node_to_destroy)
 {
     node_destructor(node_to_destroy);
 }
 
 // The iterate function traverses the list from beginning to end.
-struct Node * iterate(struct LinkedList *linked_list, int index)
+struct Node * iterate_ll(struct LinkedList *linked_list, int index)
 {
     // Confirm the user has specified a valid index.
     if (index < 0 || index >= linked_list->length)
@@ -97,10 +97,10 @@ struct Node * iterate(struct LinkedList *linked_list, int index)
 // MARK: PUBLIC METHODS
 
 // The insert function puts a new node in the chain.
-void insert(struct LinkedList *linked_list, int index, void *data, int size)
+void insert_ll(struct LinkedList *linked_list, int index, void *data, int size)
 {
     // Create a new node to be inserted.
-    struct Node *node_to_insert = create_node(data, size);
+    struct Node *node_to_insert = create_node_ll(data, size);
     // Check if this node will be the new head of the list.
     if (index == 0)
     {
@@ -112,7 +112,7 @@ void insert(struct LinkedList *linked_list, int index, void *data, int size)
     else
     {
         // Find the item in the list immediately before the desired index.
-        struct Node *cursor = iterate(linked_list, index - 1);
+        struct Node *cursor = iterate_ll(linked_list, index - 1);
         // Set the Node's next.
         node_to_insert->next = cursor->next;
         // Set the cursor's next to the new node.
@@ -124,7 +124,7 @@ void insert(struct LinkedList *linked_list, int index, void *data, int size)
 }
 
 // The remove function removes a node from the linked list.
-void remove_node(struct LinkedList *linked_list, int index)
+void remove_node_ll(struct LinkedList *linked_list, int index)
 {
     // Check if the item being removed is the head.
     if (index == 0)
@@ -134,27 +134,27 @@ void remove_node(struct LinkedList *linked_list, int index)
         // Define the new head of the list.
         linked_list->head = node_to_remove->next;
         // Remove the desired node.
-        destroy_node(node_to_remove);
+        destroy_node_ll(node_to_remove);
     }
     else
     {
         // Find the item in the list before the one that is going to be removed.
-        struct Node *cursor = iterate(linked_list, index - 1);
+        struct Node *cursor = iterate_ll(linked_list, index - 1);
         // Use the cursor to define the node to be removed.
         struct Node *node_to_remove = cursor->next;
         // Update the cursor's next to skip the node to be removed.
         cursor->next = node_to_remove->next;
         // Remove the node.
-        destroy_node(node_to_remove);
+        destroy_node_ll(node_to_remove);
     }
     // Decrement the list length.
     linked_list->length -= 1;
 }
 
 // The retrieve function is used to access data in the list.
-void * retrieve(struct LinkedList *linked_list, int index)
+void * retrieve_ll(struct LinkedList *linked_list, int index)
 {
     // Find the desired node and return its data.
-    struct Node *cursor = iterate(linked_list, index);
+    struct Node *cursor = iterate_ll(linked_list, index);
     return cursor->data;
 }
