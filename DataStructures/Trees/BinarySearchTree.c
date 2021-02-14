@@ -22,8 +22,8 @@ void destroy_node(struct Node *node_to_destroy);
 
 // MARK: Public Member Methods
 
-void * search(struct BinarySearchTree *tree, void *data);
-void insert(struct BinarySearchTree *tree, void *data, int size);
+void * search_bst(struct BinarySearchTree *tree, void *data);
+void insert_bst(struct BinarySearchTree *tree, void *data, int size);
 
 
 // MARK: DEFINITIONS
@@ -35,8 +35,8 @@ struct BinarySearchTree binary_search_tree_constructor(int (*compare)(void *data
 {
     struct BinarySearchTree tree;
     tree.compare = compare;
-    tree.search = search;
-    tree.insert = insert;
+    tree.search = search_bst;
+    tree.insert = insert_bst;
     return tree;
 }
 
@@ -114,14 +114,14 @@ struct Node * iterate(struct BinarySearchTree *tree, struct Node *cursor, void *
 
 // The search function utilizes the iterate function to test if a given node exists in the tree.
 // If the node is found, its data is returned.  Otherwise, NULL is returned.
-void * search(struct BinarySearchTree *tree, void *data)
+void * search_bst(struct BinarySearchTree *tree, void *data)
 {
     // Set the direction int pointer.
-    int *direction = NULL;
+    int direction = 0;
     // Utilize iterate to find the desired position.
-    struct Node *cursor = iterate(tree, tree->head, data, direction);
+    struct Node *cursor = iterate(tree, tree->head, data, &direction);
     // Test if the found node is the desired node, or an adjacent one.
-    if (*direction == 0)
+    if (direction == 0)
     {
         return cursor->data;
     }
@@ -132,20 +132,28 @@ void * search(struct BinarySearchTree *tree, void *data)
 }
 
 // The insert function adds new nodes to the tree by finding their proper position.
-void insert(struct BinarySearchTree *tree, void *data, int size)
+void insert_bst(struct BinarySearchTree *tree, void *data, int size)
 {
-    // Set the direction int pointer.
-    int *direction = NULL;
-    // Find the desired position.
-    struct Node *cursor = iterate(tree, tree->head, data, direction);
-    // Check if the new node should be inserted to the left or right.
-    if (*direction == 1)
+    // Check if this is the first node in the tree.
+    if (!tree->head)
     {
-        cursor->next = create_node(data, size);
+        tree->head = create_node(data, size);
     }
-    else if (*direction == -1)
+    else
     {
-        cursor->previous = create_node(data, size);
+        // Set the direction int pointer.
+        int direction = 0;
+        // Find the desired position.
+        struct Node *cursor = iterate(tree, tree->head, data, &direction);
+        // Check if the new node should be inserted to the left or right.
+        if (direction == 1)
+        {
+            cursor->next = create_node(data, size);
+        }
+        else if (direction == -1)
+        {
+            cursor->previous = create_node(data, size);
+        }
+        // Duplicate nodes will not be added.
     }
-    // Duplicate nodes will not be added.
 }

@@ -66,7 +66,6 @@ struct HTTPRequest http_request_constructor(char *request_string)
     {
         requested[i] = request_string[i];
     }
-    printf("1\n");
     for (int i = 0; i < strlen(requested) - 2; i++)
     {
         if (requested[i] == '\n' && requested[i + 1] == '\n')
@@ -75,21 +74,16 @@ struct HTTPRequest http_request_constructor(char *request_string)
             requested[i + 1] = '|';
         }
     }
-    printf("2\n");
     char *request_line = strtok(requested, "\n");
     char *header_fields = strtok(NULL, "|");
     char *body = strtok(NULL, "|");
-    printf("3\n");
     char *method = strtok(request_line, " ");
     request.Method = method_select(method);
-    printf("4\n");
     char *URI = strtok(NULL, " ");
     request.URI = URI;
-    printf("5\n");
     char *HTTPVersion = strtok(NULL, " ");
     HTTPVersion = strtok(HTTPVersion, "/");
     HTTPVersion = strtok(NULL, "/");
-    printf("6\n");
     request.HTTPVersion = (float)atof(HTTPVersion);
     
     return request;

@@ -15,8 +15,8 @@
 #ifndef hdelibc_networking_h
 #define hdelibc_networking_h
 
-#include "Nodes/Server.h"
+#include "Networking/Nodes/Server.h"
 
-#include "Protocols/HTTPRequest.h"
+#include "Networking/Protocols/HTTPRequest.h"
 
 #endif /* hdelibc_networking_h */

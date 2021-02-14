@@ -17,7 +17,6 @@
 		070A831F25D8318B00E97DE2 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A831D25D8318B00E97DE2 /* Networking.h */; };
 		0737A2F825D06F85009CCE74 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 0737A2F625D06F85009CCE74 /* Server.h */; };
 		0737A2F925D06F85009CCE74 /* Server.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2F725D06F85009CCE74 /* Server.c */; };
-		0737A2FD25D073ED009CCE74 /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2FC25D073ED009CCE74 /* test.c */; };
 		0768DF3325D5C5EF00410685 /* BinarySearchTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0768DF3125D5C5EF00410685 /* BinarySearchTree.h */; };
 		0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 0768DF3225D5C5EF00410685 /* BinarySearchTree.c */; };
 		07BF311C25C7324200A41C5D /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF311A25C7324200A41C5D /* Node.h */; };
@@ -27,7 +26,6 @@
 		07BF315A25CB344800A41C5D /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF315825CB344800A41C5D /* Queue.c */; };
 		07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EEDA1E25D3244700078FED /* HTTPRequest.h */; };
 		07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EEDA1F25D3244700078FED /* HTTPRequest.c */; };
-		07EEDA2425D3617900078FED /* t.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EEDA2325D3617900078FED /* t.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +43,6 @@
 		0737A2DE25CE316E009CCE74 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0737A2F625D06F85009CCE74 /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		0737A2F725D06F85009CCE74 /* Server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Server.c; sourceTree = "<group>"; };
-		0737A2FC25D073ED009CCE74 /* test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
 		0768DF3125D5C5EF00410685 /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
 		0768DF3225D5C5EF00410685 /* BinarySearchTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BinarySearchTree.c; sourceTree = "<group>"; };
 		07BF311125C72F0D00A41C5D /* libhdelibc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libhdelibc.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +53,6 @@
 		07BF315825CB344800A41C5D /* Queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
 		07EEDA1E25D3244700078FED /* HTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
 		07EEDA1F25D3244700078FED /* HTTPRequest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HTTPRequest.c; sourceTree = "<group>"; };
-		07EEDA2325D3617900078FED /* t.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = t.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +112,6 @@
 				070A832725D8338200E97DE2 /* README.md */,
 				070A832325D8319F00E97DE2 /* Nodes */,
 				070A832425D831B600E97DE2 /* Protocols */,
-				0737A2FC25D073ED009CCE74 /* test.c */,
-				07EEDA2325D3617900078FED /* t.c */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -255,9 +249,7 @@
 				07BF315A25CB344800A41C5D /* Queue.c in Sources */,
 				07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */,
 				070973D525CCF85800343E54 /* Node.c in Sources */,
-				0737A2FD25D073ED009CCE74 /* test.c in Sources */,
 				07BF312325C732C300A41C5D /* LinkedList.c in Sources */,
-				07EEDA2425D3617900078FED /* t.c in Sources */,
 				0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */,
 				0737A2F925D06F85009CCE74 /* Server.c in Sources */,
 				070A830725D710EC00E97DE2 /* Dictionary.c in Sources */,

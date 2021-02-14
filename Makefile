@@ -22,7 +22,7 @@ all: Main DataStructures Networking
 
 # Creates just the top level static library
 Main: DataStructuresSub NetworkingSub
-		ar rcs hdelibc.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Server.o HTTPRequest.o; make clean
+		ar rcs hdelibc.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Server.o HTTPRequest.o
 
 
 
@@ -32,7 +32,7 @@ Main: DataStructuresSub NetworkingSub
 
 # Creates the data structures library
 DataStructures: DataStructuresSub
-	ar rcs DataStructures/DataStructures.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o ; make clean
+	ar rcs DataStructures/DataStructures.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o
 	
 # Sub components of the data structures library
 DataStructuresSub: Node LinkedList Queue BinarySearchTree Entry Dictionary

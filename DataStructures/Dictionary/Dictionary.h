@@ -25,7 +25,7 @@ struct Dictionary
     // Insert adds new items to the dictionary - the user need only specify the key, value, and their respective sizes.
     void (*insert)(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size);
     // Search looks for a given key in the dictionary and returns its value if found or NULL if not.
-    void * (*search)(struct Dictionary *dictionary, void *key);
+    void * (*search)(struct Dictionary *dictionary, void *key, int key_size);
 };
 
 // MARK: CONSTRUCTORS

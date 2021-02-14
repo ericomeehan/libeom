@@ -15,14 +15,14 @@
 #ifndef hdelibc_datastructures_h
 #define hdelibc_datastructures_h
 
-#include "Common/Node.h"
+#include "DataStructures/Common/Node.h"
 
-#include "Dictionary/Entry.h"
-#include "Dictionary/Dictionary.h"
+#include "DataStructures/Dictionary/Entry.h"
+#include "DataStructures/Dictionary/Dictionary.h"
 
-#include "Trees/BinarySearchTree.h"
+#include "DataStructures/Trees/BinarySearchTree.h"
 
-#include "Lists/LinkedList.h"
-#include "Lists/Queue.h"
+#include "DataStructures/Lists/LinkedList.h"
+#include "DataStructures/Lists/Queue.h"
 
 #endif /* hdelibc_datastructures_h */
