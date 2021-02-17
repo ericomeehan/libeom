@@ -19,6 +19,7 @@
 struct Node * create_node_bst(void *data, int size);
 void destroy_node_bst(struct Node *node_to_destroy);
 struct Node * iterate_bst(struct BinarySearchTree *tree, struct Node *cursor, void *data, int *direction);
+void recursive_tree_destruction(struct Node *node);
 
 
 // MARK: Public Member Methods
@@ -39,6 +40,11 @@ struct BinarySearchTree binary_search_tree_constructor(int (*compare)(void *data
     tree.search = search_bst;
     tree.insert = insert_bst;
     return tree;
+}
+
+void binary_search_tree_destructor(struct BinarySearchTree tree)
+{
+    recursive_tree_destruction(tree.head);
 }
 
 
@@ -108,6 +114,19 @@ struct Node * iterate_bst(struct BinarySearchTree *tree, struct Node *cursor, vo
         // Return the node.
         return cursor;
     }
+}
+
+void recursive_tree_destruction(struct Node *node)
+{
+    if (node->previous)
+    {
+        recursive_tree_destruction(node->previous);
+    }
+    if (node->next)
+    {
+        recursive_tree_destruction(node->next);
+    }
+    destroy_node_bst(node);
 }
 
 

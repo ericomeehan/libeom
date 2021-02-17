@@ -42,7 +42,7 @@ struct BinarySearchTree
 // MARK: CONSTRUCTORS
 // The constructor takes the desired compare function as its only argument.
 struct BinarySearchTree binary_search_tree_constructor(int (*compare)(void *data_one, void *data_two));
-void binary_search_tree_destructor(void);
+void binary_search_tree_destructor(struct BinarySearchTree tree);
 
 // MARK: PUBLIC HELPER FUNCTIONS
 int binary_search_tree_int_compare(void *data_one, void *data_two);
