@@ -30,8 +30,11 @@ struct Dictionary
 
 // MARK: CONSTRUCTORS
 // The constructor for a dictionary requires a compare function.  This will be passed on to the BinarySearchTree.
-struct Dictionary dictionary_constructor(int (*compare)(void *key_one, void *key_two));
+struct Dictionary dictionary_constructor(int (*compare)(void *entry_one, void *entry_two));
 // The destructor will need to free every node in the tree.
 struct Dictionary dictionary_destructor(struct Dictionary *dictionary);
+
+// MARK: PUBLIC HELPER FUNCTIONS
+int compare_string_keys(void *entry_one, void *entry_two);
 
 #endif /* Dictionary_h */
