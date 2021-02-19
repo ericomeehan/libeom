@@ -18,14 +18,14 @@
 
 // MARK: Private Member Methods
 
-struct Node * create_node_ll(void *data, int size);
+struct Node * create_node_ll(void *data, unsigned long size);
 void destroy_node_ll(struct Node *node_to_destroy);
 
 
 // MARK: Public Member Methods
 
 struct Node * iterate_ll(struct LinkedList *linked_list, int index);
-void insert_ll(struct LinkedList *linked_list, int index, void *data, int size);
+void insert_ll(struct LinkedList *linked_list, int index, void *data, unsigned long size);
 void remove_node_ll(struct LinkedList *linked_list, int index);
 void * retrieve_ll(struct LinkedList *linked_list, int index);
 
@@ -58,7 +58,7 @@ void linked_list_destructor(struct LinkedList *linked_list)
 // MARK: PRIVATE METHODS
 
 // The create_node function creates a new node to add to the chain by allocating space on the heap and calling the node constructor.
-struct Node * create_node_ll(void *data, int size)
+struct Node * create_node_ll(void *data, unsigned long size)
 {
     // Allocate space.
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
@@ -96,7 +96,7 @@ struct Node * iterate_ll(struct LinkedList *linked_list, int index)
 // MARK: PUBLIC METHODS
 
 // The insert function puts a new node in the chain.
-void insert_ll(struct LinkedList *linked_list, int index, void *data, int size)
+void insert_ll(struct LinkedList *linked_list, int index, void *data, unsigned long size)
 {
     // Create a new node to be inserted.
     struct Node *node_to_insert = create_node_ll(data, size);

@@ -84,6 +84,10 @@ void extract_request_line_fields(struct HTTPRequest *request, char *request_line
     request_line_dict.insert(&request_line_dict, "http_version", sizeof("http_version"), http_version, sizeof(char[strlen(http_version)]));
     // Save the dictionary to the request object.
     request->request_line = request_line_dict;
+    if (request->request_line.search(&request->request_line, "GET", sizeof("GET")))
+    {
+        extract_body(request, (char *)request->request_line.search(&request->request_line, "uri", sizeof("uri")));
+    }
 }
 
 // Parses out the header fields.

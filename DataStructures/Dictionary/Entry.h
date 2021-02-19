@@ -22,6 +22,6 @@ struct Entry
 
 // MARK: CONSTRUCTORS
 // The constructor for an entry requires the key, value, and sizes of each, allowing any data type to be stored.
-struct Entry entry_constructor(void *key, int key_size, void *value, int value_size);
+struct Entry entry_constructor(void *key, unsigned long key_size, void *value, unsigned long value_size);
 void entry_destructor(struct Entry *entry);
 #endif /* Entry_h */

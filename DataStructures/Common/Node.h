@@ -42,7 +42,7 @@ struct Node
 // MARK: CONSTRUCTORS
 
 // The constructor should be used to create nodes.
-struct Node node_constructor(void *data, int size);
+struct Node node_constructor(void *data, unsigned long size);
 // The destructor should be used to destroy nodes.
 void node_destructor(struct Node *node);
 

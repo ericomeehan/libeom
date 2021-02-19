@@ -13,7 +13,7 @@
 
 // MARK: FUNCTION PROTOTYPES
 
-void push(struct Queue *queue, void *data, int size);
+void push(struct Queue *queue, void *data, unsigned long size);
 void * peek(struct Queue *queue);
 void pop (struct Queue *queue);
 
@@ -45,7 +45,7 @@ void queue_destructor(struct Queue *queue)
 // MARK: PUBLIC METHODS
 
 // The push method adds an item to the end of the list.
-void push(struct Queue *queue, void *data, int size)
+void push(struct Queue *queue, void *data, unsigned long size)
 {
     // Utilize insert from LinkedList with enforced parameters.
     queue->list.insert(&queue->list, queue->list.length, data, size);

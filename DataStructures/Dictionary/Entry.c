@@ -16,7 +16,7 @@
 // MARK: CONSTRUCTORS
 
 // The constructor creates, initializes, and returns a new dictionary entry.
-struct Entry entry_constructor(void *key, int key_size, void *value, int value_size)
+struct Entry entry_constructor(void *key, unsigned long key_size, void *value, unsigned long value_size)
 {
     // Create the entry instance.
     struct Entry entry;

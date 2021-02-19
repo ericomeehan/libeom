@@ -19,9 +19,9 @@ void recursive_dictionary_destroy(struct Node *cursor);
 
 // MARK: PUBLIC MEMBER FUNCTIONS
 // Insert adds items to the dictionary - the user does not need to implement Elements themselves.
-void insert_dict(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size);
+void insert_dict(struct Dictionary *dictionary, void *key, unsigned long key_size, void *value, unsigned long value_size);
 // Search finds the value for a given key in the Dictionary.
-void * search_dict(struct Dictionary *dictionary, void *key, int key_size);
+void * search_dict(struct Dictionary *dictionary, void *key, unsigned long key_size);
 
 // MARK: CONSTRUCTORS
 struct Dictionary dictionary_constructor(int (*compare)(void *key_one, void *key_two))
@@ -56,7 +56,7 @@ void recursive_dictionary_destroy(struct Node *cursor)
 
 // MARK: PUBLIC MEMBER FUNCTIONS
 
-void * search_dict(struct Dictionary *dictionary, void *key, int key_size)
+void * search_dict(struct Dictionary *dictionary, void *key, unsigned long key_size)
 {
     int dummy_value = 0;
     struct Entry searchable = entry_constructor(key, key_size, &dummy_value, sizeof(dummy_value));
@@ -73,7 +73,7 @@ void * search_dict(struct Dictionary *dictionary, void *key, int key_size)
     }
 }
 
-void insert_dict(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size)
+void insert_dict(struct Dictionary *dictionary, void *key, unsigned long key_size, void *value, unsigned long value_size)
 {
     // Create a new Entry.
     struct Entry entry = entry_constructor(key, key_size, value, value_size);

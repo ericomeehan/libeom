@@ -23,9 +23,9 @@ struct Dictionary
     struct BinarySearchTree binary_search_tree;
     /* PUBLIC MEMBER METHODS */
     // Insert adds new items to the dictionary - the user need only specify the key, value, and their respective sizes.
-    void (*insert)(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size);
+    void (*insert)(struct Dictionary *dictionary, void *key, unsigned long key_size, void *value, unsigned long value_size);
     // Search looks for a given key in the dictionary and returns its value if found or NULL if not.
-    void * (*search)(struct Dictionary *dictionary, void *key, int key_size);
+    void * (*search)(struct Dictionary *dictionary, void *key, unsigned long key_size);
 };
 
 // MARK: CONSTRUCTORS

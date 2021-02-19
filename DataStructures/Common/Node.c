@@ -18,7 +18,7 @@
 // MARK: CONSTRUCTORS
 
 // The constructor is used to create new instances of nodes.
-struct Node node_constructor(void *data, int size)
+struct Node node_constructor(void *data, unsigned long size)
 {
     if (size < 1)
     {
