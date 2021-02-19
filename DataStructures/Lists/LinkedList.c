@@ -79,8 +79,7 @@ struct Node * iterate_ll(struct LinkedList *linked_list, int index)
     // Confirm the user has specified a valid index.
     if (index < 0 || index >= linked_list->length)
     {
-        printf("Index out of bound..");
-        exit(9);
+        return NULL;
     }
     // Create a cursor node for iteration.
     struct Node *cursor = linked_list->head;
@@ -156,5 +155,12 @@ void * retrieve_ll(struct LinkedList *linked_list, int index)
 {
     // Find the desired node and return its data.
     struct Node *cursor = iterate_ll(linked_list, index);
-    return cursor->data;
+    if (cursor)
+    {
+        return cursor->data;
+    }
+    else
+    {
+        return NULL;
+    }
 }

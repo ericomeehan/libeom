@@ -13,7 +13,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-// MARK: FUNCTION PROTOTYPES
+// MARK: PRIVATE MEMBER FUNCTIONS
+// Recursive algorithm to destroy the nodes in a dictionary - overrides the destructor of a BinarySearchTree
+void recursive_dictionary_destroy(struct Node *cursor);
+
+// MARK: PUBLIC MEMBER FUNCTIONS
 // Insert adds items to the dictionary - the user does not need to implement Elements themselves.
 void insert_dict(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size);
 // Search finds the value for a given key in the Dictionary.
@@ -27,6 +31,27 @@ struct Dictionary dictionary_constructor(int (*compare)(void *key_one, void *key
     dictionary.insert = insert_dict;
     dictionary.search = search_dict;
     return dictionary;
+}
+
+void dictionary_destructor(struct Dictionary *dictionary)
+{
+    recursive_dictionary_destroy(dictionary->binary_search_tree.head);
+}
+
+// MARK: PRIVATE MEMBER FUNCTIONS
+void recursive_dictionary_destroy(struct Node *cursor)
+{
+    if (cursor->previous)
+    {
+        recursive_dictionary_destroy(cursor->previous);
+    }
+    if (cursor->next)
+    {
+        recursive_dictionary_destroy(cursor->next);
+    }
+    entry_destructor((struct Entry *)cursor->data);
+    free(cursor->data);
+    free(cursor);
 }
 
 // MARK: PUBLIC MEMBER FUNCTIONS
@@ -48,7 +73,6 @@ void * search_dict(struct Dictionary *dictionary, void *key, int key_size)
     }
 }
 
-
 void insert_dict(struct Dictionary *dictionary, void *key, int key_size, void *value, int value_size)
 {
     // Create a new Entry.
@@ -57,7 +81,7 @@ void insert_dict(struct Dictionary *dictionary, void *key, int key_size, void *v
     dictionary->binary_search_tree.insert(&dictionary->binary_search_tree, &entry, sizeof(entry));
 }
 
-
+#include <stdio.h>
 
 // MARK: PUBLIC HELPER FUNCTIONS
 int compare_string_keys(void *entry_one, void *entry_two)

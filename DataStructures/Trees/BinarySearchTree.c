@@ -12,6 +12,8 @@
 
 #include <stdlib.h>
 
+#include <stdio.h>
+
 // MARK: PROTOTYPES
 
 // MARK: Private Member Methods
@@ -36,6 +38,7 @@ void insert_bst(struct BinarySearchTree *tree, void *data, int size);
 struct BinarySearchTree binary_search_tree_constructor(int (*compare)(void *data_one, void *data_two))
 {
     struct BinarySearchTree tree;
+    tree.head = NULL;
     tree.compare = compare;
     tree.search = search_bst;
     tree.insert = insert_bst;

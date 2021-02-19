@@ -19,6 +19,10 @@
 		0737A2F925D06F85009CCE74 /* Server.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2F725D06F85009CCE74 /* Server.c */; };
 		0768DF3325D5C5EF00410685 /* BinarySearchTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0768DF3125D5C5EF00410685 /* BinarySearchTree.h */; };
 		0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 0768DF3225D5C5EF00410685 /* BinarySearchTree.c */; };
+		077A17C425DEFE24009D89B5 /* HTTPServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 077A17C225DEFE24009D89B5 /* HTTPServer.h */; };
+		077A17C525DEFE24009D89B5 /* HTTPServer.c in Sources */ = {isa = PBXBuildFile; fileRef = 077A17C325DEFE24009D89B5 /* HTTPServer.c */; };
+		077A17CE25DF0574009D89B5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 077A17CD25DF0574009D89B5 /* main.c */; };
+		077A17D525DF0676009D89B5 /* libhdelibc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BF311125C72F0D00A41C5D /* libhdelibc.a */; };
 		07BF311C25C7324200A41C5D /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF311A25C7324200A41C5D /* Node.h */; };
 		07BF312225C732C300A41C5D /* LinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF312025C732C300A41C5D /* LinkedList.h */; };
 		07BF312325C732C300A41C5D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF312125C732C300A41C5D /* LinkedList.c */; };
@@ -27,6 +31,18 @@
 		07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EEDA1E25D3244700078FED /* HTTPRequest.h */; };
 		07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EEDA1F25D3244700078FED /* HTTPRequest.c */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		077A17C925DF0574009D89B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		070973D425CCF85800343E54 /* Node.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Node.c; sourceTree = "<group>"; };
@@ -45,6 +61,10 @@
 		0737A2F725D06F85009CCE74 /* Server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Server.c; sourceTree = "<group>"; };
 		0768DF3125D5C5EF00410685 /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
 		0768DF3225D5C5EF00410685 /* BinarySearchTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BinarySearchTree.c; sourceTree = "<group>"; };
+		077A17C225DEFE24009D89B5 /* HTTPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		077A17C325DEFE24009D89B5 /* HTTPServer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HTTPServer.c; sourceTree = "<group>"; };
+		077A17CB25DF0574009D89B5 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		077A17CD25DF0574009D89B5 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		07BF311125C72F0D00A41C5D /* libhdelibc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libhdelibc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07BF311A25C7324200A41C5D /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		07BF312025C732C300A41C5D /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
@@ -56,6 +76,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		077A17C825DF0574009D89B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				077A17D525DF0676009D89B5 /* libhdelibc.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07BF310F25C72F0D00A41C5D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,6 +110,8 @@
 			children = (
 				0737A2F625D06F85009CCE74 /* Server.h */,
 				0737A2F725D06F85009CCE74 /* Server.c */,
+				077A17C225DEFE24009D89B5 /* HTTPServer.h */,
+				077A17C325DEFE24009D89B5 /* HTTPServer.c */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -134,6 +164,21 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		077A17CC25DF0574009D89B5 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				077A17CD25DF0574009D89B5 /* main.c */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		077A17D425DF0676009D89B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		07BF310825C72F0D00A41C5D = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +189,9 @@
 				07BF311925C7321500A41C5D /* DataStructures */,
 				070A831D25D8318B00E97DE2 /* Networking.h */,
 				0737A2F525D06F73009CCE74 /* Networking */,
+				077A17CC25DF0574009D89B5 /* test */,
 				07BF311225C72F0D00A41C5D /* Products */,
+				077A17D425DF0676009D89B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				07BF311125C72F0D00A41C5D /* libhdelibc.a */,
+				077A17CB25DF0574009D89B5 /* test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +228,7 @@
 				07BF315925CB344800A41C5D /* Queue.h in Headers */,
 				070A830C25D7752400E97DE2 /* DataStructures.h in Headers */,
 				070A830025D70F5F00E97DE2 /* Entry.h in Headers */,
+				077A17C425DEFE24009D89B5 /* HTTPServer.h in Headers */,
 				070A831F25D8318B00E97DE2 /* Networking.h in Headers */,
 				0737A2F825D06F85009CCE74 /* Server.h in Headers */,
 				07BF311C25C7324200A41C5D /* Node.h in Headers */,
@@ -192,6 +241,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		077A17CA25DF0574009D89B5 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 077A17CF25DF0574009D89B5 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				077A17C725DF0574009D89B5 /* Sources */,
+				077A17C825DF0574009D89B5 /* Frameworks */,
+				077A17C925DF0574009D89B5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = 077A17CB25DF0574009D89B5 /* test */;
+			productType = "com.apple.product-type.tool";
+		};
 		07BF311025C72F0D00A41C5D /* hdelibc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07BF311525C72F0D00A41C5D /* Build configuration list for PBXNativeTarget "hdelibc" */;
@@ -217,6 +283,9 @@
 			attributes = {
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					077A17CA25DF0574009D89B5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					07BF311025C72F0D00A41C5D = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -236,11 +305,20 @@
 			projectRoot = "";
 			targets = (
 				07BF311025C72F0D00A41C5D /* hdelibc */,
+				077A17CA25DF0574009D89B5 /* test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		077A17C725DF0574009D89B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				077A17CE25DF0574009D89B5 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07BF310E25C72F0D00A41C5D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +330,7 @@
 				07BF312325C732C300A41C5D /* LinkedList.c in Sources */,
 				0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */,
 				0737A2F925D06F85009CCE74 /* Server.c in Sources */,
+				077A17C525DEFE24009D89B5 /* HTTPServer.c in Sources */,
 				070A830725D710EC00E97DE2 /* Dictionary.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +338,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		077A17D025DF0574009D89B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 975P2G4HC3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		077A17D125DF0574009D89B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 975P2G4HC3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		07BF311325C72F0D00A41C5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -395,6 +494,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		077A17CF25DF0574009D89B5 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				077A17D025DF0574009D89B5 /* Debug */,
+				077A17D125DF0574009D89B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		07BF310C25C72F0D00A41C5D /* Build configuration list for PBXProject "hdelibc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
