@@ -1,6 +1,6 @@
 // 
 // Homo Deus
-// 2/18/21
+// 2/21/21
 //
 // Homo Deus C Library
 // HTTPServer.c
@@ -11,30 +11,37 @@
 
 
 #include "HTTPServer.h"
-#include "../Protocols/HTTPRequest.h"
+#include "Route.h"
 
-#include <unistd.h>
+#include <stdarg.h>
 #include <string.h>
-#include <stdio.h>
 
-void launch(struct Server *server)
+void register_routes(struct HTTPServer *server, char * (*route_function)(struct HTTPServer *server, struct HTTPRequest *request), char *uri, int num_methods, ...);
+
+void launch(struct Server *);
+
+
+struct HTTPServer http_server_constructor()
 {
-    int addrlen = sizeof(server->address);
-    long valread;
-    while(1)
+    struct HTTPServer server;
+    server.server = server_constructor(AF_INET, SOCK_STREAM, 0, INADDR_ANY, 80, 255, launch);
+    server.routes = dictionary_constructor(compare_string_keys);
+    server.register_routes = register_routes;
+    return server;
+}
+
+
+void register_routes(struct HTTPServer *server, char * (*route_function)(struct HTTPServer *server, struct HTTPRequest *request), char *uri, int num_methods, ...)
+{
+    struct Route route;
+    va_list methods;
+    va_start(methods, num_methods);
+    for (int i = 0; i < num_methods; i++)
     {
-        printf("=== WAITING ===\n");
-        int new_socket = accept(server->socket, (struct sockaddr *)&server->address, (socklen_t *)&addrlen);
-        char buffer[30000];
-        valread = read(new_socket, buffer, 30000);
-        struct HTTPRequest request = http_request_constructor(buffer);
-        char *x = "Host";
-        char *content_type = (char *)request.header_fields.search(&request.header_fields, x, sizeof(char[strlen(x)]));
-        char *hello = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 13\n\n";
-        char r[strlen(hello) + strlen(content_type)];
-        strcat(r, hello);
-        strcat(r, content_type);
-        write(new_socket, r, strlen(r));
-        close(new_socket);
+        route.methods[i] = va_arg(methods, int);
     }
+    strcpy(route.uri, uri);
+    route.route_function = route_function;
+    
+    server->routes.insert(&server->routes, uri, sizeof(char[strlen(uri)]), &route, sizeof(route));
 }
