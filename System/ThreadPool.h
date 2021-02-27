@@ -32,7 +32,7 @@ struct ThreadPool
     pthread_mutex_t lock;
     pthread_cond_t signal;
     
-    void (*add_work)(struct ThreadJob job);
+    void (*add_work)(struct ThreadPool *thread_pool, struct ThreadJob thread_job);
 };
 
 struct ThreadPool thread_pool_constructor(int num_threads);
