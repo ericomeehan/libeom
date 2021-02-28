@@ -131,9 +131,12 @@ void remove_node_ll(struct LinkedList *linked_list, int index)
         // Collect the node to be removed.
         struct Node *node_to_remove = linked_list->head;
         // Define the new head of the list.
-        linked_list->head = node_to_remove->next;
-        // Remove the desired node.
-        destroy_node_ll(node_to_remove);
+        if (node_to_remove)
+        {
+            linked_list->head = node_to_remove->next;
+            // Remove the desired node.
+            destroy_node_ll(node_to_remove);
+        }
     }
     else
     {

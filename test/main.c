@@ -10,14 +10,15 @@
 
 #include "../Networking/Nodes/HTTPServer.h"
 
-#include <stdio.h>
-
 char * home(struct HTTPServer *server, struct HTTPRequest *request)
 {
-    char *a = "/Users/eric/Documents/demo/header.html";
-    char *b = "/Users/eric/Documents/demo/index.html";
-    char *x = render_template(2, a, b);
+    char *x = render_template(2, "/Users/eric/Documents/demo/header.html", "/Users/eric/Documents/demo/index.html");
     return x;
+}
+
+char * about(struct HTTPServer *server, struct HTTPRequest *request)
+{
+    return render_template(2, "/Users/eric/Documents/demo/header.html", "/Users/eric/Documents/demo/about.html");
 }
 
 int main()
@@ -25,5 +26,7 @@ int main()
     struct HTTPServer server = http_server_constructor();
     
     server.register_routes(&server, home, "/", 0);
+    server.register_routes(&server, about, "/about", 0);
+    
     server.launch(&server);
 }

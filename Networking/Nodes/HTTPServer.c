@@ -83,6 +83,7 @@ void * handler(void *arg)
     struct Route *route = client_server->server->routes.search(&client_server->server->routes, uri, sizeof(char[strlen(uri)]));
     char *response = route->route_function(client_server->server, &request);
     write(client_server->client, response, sizeof(char[strlen(response)]));
+    close(client_server->client);
     free(client_server);
     return NULL;
 }
