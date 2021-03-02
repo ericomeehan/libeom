@@ -8,6 +8,10 @@
 // Eric Meehan
 //
 
+/*
+ The HTTPRequest struct contains three dictionaries representing the three components of an HTTP Request.
+ */
+
 #ifndef HTTPRequest_h
 #define HTTPRequest_h
 
@@ -22,6 +26,7 @@ struct HTTPRequest
     struct Dictionary header_fields;
     struct Dictionary body;
 };
+
 
 // MARK: CONSTRUCTORS
 

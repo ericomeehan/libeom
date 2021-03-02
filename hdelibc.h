@@ -19,4 +19,6 @@
 
 #include "Networking.h"
 
+#include "System.h"
+
 #endif /* hdelibc_h */

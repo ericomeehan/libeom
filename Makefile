@@ -12,7 +12,7 @@
 ###############################################################################
 
 # Create top level static library and all sub-libraries
-all: Main DataStructures Networking
+all: Main DataStructures Networking Systems
 
 
 
@@ -21,8 +21,8 @@ all: Main DataStructures Networking
 ###############################################################################
 
 # Creates just the top level static library
-Main: DataStructuresSub NetworkingSub
-		ar rcs hdelibc.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Server.o HTTPRequest.o
+Main: DataStructuresSub NetworkingSub SystemsSub
+		ar rcs hdelibc.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Server.o HTTPServer.o HTTPRequest.o ThreadPool.o
 
 
 
@@ -71,8 +71,27 @@ NetworkingSub: Server HTTPRequest
 Server:
 	gcc -c Networking/Nodes/Server.c
 
+HTTPServer:
+	gcc -c Networking/Nodes/HTTPServer.c
+
 HTTPRequest:
 	gcc -c Networking/Protocols/HTTPRequest.c
+	
+	
+
+###############################################################################
+# Systems
+###############################################################################
+
+# Creates the systems library
+Systems: SystemsSub
+	ar rcs System/System.a ThreadPool.o
+
+# Sub components of the systems library
+SystemsSub: ThreadPool
+
+ThreadPool:
+	gcc -c System/ThreadPool.c
 
 
 
