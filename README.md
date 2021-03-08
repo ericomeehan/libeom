@@ -21,6 +21,14 @@ make Main
 
 If you wish to compile a static library for only a portion of hdelibc, you will need to use the command specified for that section.  You can find the command in that sub-module's README, or in the table of contents below.
 
+After using one of the aforementioned make commands, it is recommended to run:
+
+```
+make clean
+```
+
+To remove the residual object files.
+
 ## Including
 
 The easiest way to import the library is simply to download the project folder and copy it into your project, and then reference the desired header files.  You will need to use brackets or quotes according to how you intend to use the library, but documentation is written as if hdelibc is saved in your default include path.
@@ -55,20 +63,20 @@ Since there are numerous sub-modules, this file will simply serve as a table of 
 
 For specific documentation on components, check the README included in the sub-module directories.  
 
+
 ### Data Structures
 
 **Location:**
 
 ```
-~/hdelibc/DataStructures
+hdelibc/DataStructures
 ```
 
 **Include:**
 
 ```
-#include <hdelibc/DataStructures/hdelibc-datastructures.h>
+#include <hdelibc/DataStructures.h>
 ```
-
 
 #### Components
 
@@ -89,3 +97,44 @@ For specific documentation on components, check the README included in the sub-m
 **Trees**
 
 * BinarySearchTree
+
+### Networking
+
+**Location**
+
+```
+hdelibc/Networking
+```
+
+**Include**
+
+```
+#include <hdelibc/Networking.h>
+```
+
+#### Components
+
+**Nodes**
+
+* Server
+* HTTPServer
+
+**Protocols**
+
+* HTTPRequest
+
+### Systems
+
+**Location**
+
+```
+hdelibc/Systems
+```
+
+**Include**
+
+```
+#include <hdelibc/Systems.h>
+```
+
+

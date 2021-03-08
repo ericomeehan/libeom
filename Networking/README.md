@@ -15,7 +15,7 @@ make Networking
 This will generate a static library in the following folder:
 
 ```
-hdelibc/Networking/Networking.a
+hdelibc/Networking.a
 ```
 ## Including
 

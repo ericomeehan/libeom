@@ -17,11 +17,14 @@
 		070A830C25D7752400E97DE2 /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A830A25D7752400E97DE2 /* DataStructures.h */; };
 		070A831925D8316100E97DE2 /* hdelibc.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A831725D8316100E97DE2 /* hdelibc.h */; };
 		070A831F25D8318B00E97DE2 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 070A831D25D8318B00E97DE2 /* Networking.h */; };
+		070F6B1A25F2BDD100335EEE /* Cryptography.h in Headers */ = {isa = PBXBuildFile; fileRef = 070F6B1825F2BDD100335EEE /* Cryptography.h */; };
 		0737A2F825D06F85009CCE74 /* Server.h in Headers */ = {isa = PBXBuildFile; fileRef = 0737A2F625D06F85009CCE74 /* Server.h */; };
 		0737A2F925D06F85009CCE74 /* Server.c in Sources */ = {isa = PBXBuildFile; fileRef = 0737A2F725D06F85009CCE74 /* Server.c */; };
 		073F391325EDECC9009E4178 /* Systems.h in Headers */ = {isa = PBXBuildFile; fileRef = 073F391125EDECC9009E4178 /* Systems.h */; };
 		0768DF3325D5C5EF00410685 /* BinarySearchTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0768DF3125D5C5EF00410685 /* BinarySearchTree.h */; };
 		0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 0768DF3225D5C5EF00410685 /* BinarySearchTree.c */; };
+		076C3A3B25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.h in Headers */ = {isa = PBXBuildFile; fileRef = 076C3A3925F16CB400DF3B58 /* ArbitrarilyPreciseInteger.h */; };
+		076C3A3C25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c in Sources */ = {isa = PBXBuildFile; fileRef = 076C3A3A25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c */; };
 		0773445E25E9782F0063555F /* ThreadPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 0773445C25E9782F0063555F /* ThreadPool.h */; };
 		0773445F25E9782F0063555F /* ThreadPool.c in Sources */ = {isa = PBXBuildFile; fileRef = 0773445D25E9782F0063555F /* ThreadPool.c */; };
 		077A17CE25DF0574009D89B5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 077A17CD25DF0574009D89B5 /* main.c */; };
@@ -61,12 +64,15 @@
 		070A831D25D8318B00E97DE2 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		070A832625D8337400E97DE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		070A832725D8338200E97DE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		070F6B1825F2BDD100335EEE /* Cryptography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cryptography.h; sourceTree = "<group>"; };
 		0737A2DE25CE316E009CCE74 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0737A2F625D06F85009CCE74 /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		0737A2F725D06F85009CCE74 /* Server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Server.c; sourceTree = "<group>"; };
 		073F391125EDECC9009E4178 /* Systems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Systems.h; sourceTree = "<group>"; };
 		0768DF3125D5C5EF00410685 /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
 		0768DF3225D5C5EF00410685 /* BinarySearchTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BinarySearchTree.c; sourceTree = "<group>"; };
+		076C3A3925F16CB400DF3B58 /* ArbitrarilyPreciseInteger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArbitrarilyPreciseInteger.h; sourceTree = "<group>"; };
+		076C3A3A25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ArbitrarilyPreciseInteger.c; sourceTree = "<group>"; };
 		0773445C25E9782F0063555F /* ThreadPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadPool.h; sourceTree = "<group>"; };
 		0773445D25E9782F0063555F /* ThreadPool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ThreadPool.c; sourceTree = "<group>"; };
 		077A17CB25DF0574009D89B5 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +137,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		070F6B1725F2BDB300335EEE /* Multiprecision */ = {
+			isa = PBXGroup;
+			children = (
+				076C3A3925F16CB400DF3B58 /* ArbitrarilyPreciseInteger.h */,
+				076C3A3A25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c */,
+			);
+			path = Multiprecision;
+			sourceTree = "<group>";
+		};
 		0737A2DD25CE3156009CCE74 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +185,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		076C3A3825F16C9800DF3B58 /* Cryptography */ = {
+			isa = PBXGroup;
+			children = (
+				070F6B1725F2BDB300335EEE /* Multiprecision */,
+			);
+			path = Cryptography;
+			sourceTree = "<group>";
+		};
 		0773445B25E9781C0063555F /* Systems */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +216,8 @@
 				070A831725D8316100E97DE2 /* hdelibc.h */,
 				070A830925D769B700E97DE2 /* Makefile */,
 				0737A2DE25CE316E009CCE74 /* README.md */,
+				070F6B1825F2BDD100335EEE /* Cryptography.h */,
+				076C3A3825F16C9800DF3B58 /* Cryptography */,
 				070A830A25D7752400E97DE2 /* DataStructures.h */,
 				07BF311925C7321500A41C5D /* DataStructures */,
 				070A831D25D8318B00E97DE2 /* Networking.h */,
@@ -232,6 +257,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070F6B1A25F2BDD100335EEE /* Cryptography.h in Headers */,
 				070A831925D8316100E97DE2 /* hdelibc.h in Headers */,
 				070A830625D710EC00E97DE2 /* Dictionary.h in Headers */,
 				07BF315925CB344800A41C5D /* Queue.h in Headers */,
@@ -241,6 +267,7 @@
 				070A831F25D8318B00E97DE2 /* Networking.h in Headers */,
 				0737A2F825D06F85009CCE74 /* Server.h in Headers */,
 				0773445E25E9782F0063555F /* ThreadPool.h in Headers */,
+				076C3A3B25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.h in Headers */,
 				07BF311C25C7324200A41C5D /* Node.h in Headers */,
 				0768DF3325D5C5EF00410685 /* BinarySearchTree.h in Headers */,
 				07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */,
@@ -340,6 +367,7 @@
 				070973D525CCF85800343E54 /* Node.c in Sources */,
 				07BF312325C732C300A41C5D /* LinkedList.c in Sources */,
 				0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */,
+				076C3A3C25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c in Sources */,
 				0737A2F925D06F85009CCE74 /* Server.c in Sources */,
 				0773445F25E9782F0063555F /* ThreadPool.c in Sources */,
 				0702102825E2E7FA00D60AD5 /* HTTPServer.c in Sources */,

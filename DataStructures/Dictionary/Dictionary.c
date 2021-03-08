@@ -28,6 +28,7 @@ struct Dictionary dictionary_constructor(int (*compare)(void *key_one, void *key
 {
     struct Dictionary dictionary;
     dictionary.binary_search_tree = binary_search_tree_constructor(compare);
+    dictionary.keys = linked_list_constructor();
     dictionary.insert = insert_dict;
     dictionary.search = search_dict;
     return dictionary;
@@ -35,6 +36,7 @@ struct Dictionary dictionary_constructor(int (*compare)(void *key_one, void *key
 
 void dictionary_destructor(struct Dictionary *dictionary)
 {
+    linked_list_destructor(&dictionary->keys);
     recursive_dictionary_destroy(dictionary->binary_search_tree.head);
 }
 
@@ -79,6 +81,7 @@ void insert_dict(struct Dictionary *dictionary, void *key, unsigned long key_siz
     struct Entry entry = entry_constructor(key, key_size, value, value_size);
     // Insert that entry into the tree.
     dictionary->binary_search_tree.insert(&dictionary->binary_search_tree, &entry, sizeof(entry));
+    dictionary->keys.insert(&dictionary->keys, dictionary->keys.length, key, key_size);
 }
 
 #include <stdio.h>

@@ -36,6 +36,19 @@ struct HTTPServer
     void (*launch)(struct HTTPServer *server);
 };
 
+// The HTTPMethods enum lists the various HTTP methods for easy referral.
+enum HTTPMethods
+{
+    CONNECT,
+    DELETE,
+    GET,
+    HEAD,
+    OPTIONS,
+    PATCH,
+    POST,
+    PUT,
+    TRACE
+};
 
 // MARK: CONSTRUCTORS
 

@@ -19,4 +19,6 @@
 
 #include "Networking/Protocols/HTTPRequest.h"
 
+#include "Networking/Nodes/HTTPServer.h"
+
 #endif /* hdelibc_networking_h */
