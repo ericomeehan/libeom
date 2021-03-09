@@ -29,4 +29,7 @@ struct Client
     void (*request)(struct Client *client, char *server_ip, char *request);
 };
 
+struct Client client_constructor(int domain, int service, int protocol, int port, u_long interface);
+
+
 #endif /* Client_h */
