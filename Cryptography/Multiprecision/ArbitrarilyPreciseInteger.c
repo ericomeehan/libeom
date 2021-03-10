@@ -1,13 +1,16 @@
-// 
-// Homo Deus
-// 3/4/21
 //
-// Homo Deus C Library
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
 // UnboundedInteger.c
 //
 // Eric Meehan
-// 
-
+// 3/4/21
+//
+//
 
 
 #include "ArbitrarilyPreciseInteger.h"

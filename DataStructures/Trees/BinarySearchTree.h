@@ -1,11 +1,15 @@
 //
-// Homo Deus
-// 2/11/21
+// ==================================
+// libeom
 //
-// Homo Deus C Library
+// an open source c library.
+// ==================================
+//
 // BinarySearchTree.h
 //
 // Eric Meehan
+// 2/11/21
+//
 //
 
 /*

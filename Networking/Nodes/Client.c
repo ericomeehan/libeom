@@ -1,12 +1,16 @@
-// 
-// Homo Deus
-// 3/9/21
 //
-// Homo Deus C Library
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
 // Client.c
 //
 // Eric Meehan
-// 
+// 3/9/21
+//
+//
 
 
 

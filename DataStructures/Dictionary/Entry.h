@@ -1,11 +1,15 @@
 //
-// Homo Deus
-// 2/12/21
+// ==================================
+// libeom
 //
-// Homo Deus C Library
+// an open source c library.
+// ==================================
+//
 // Entry.h
 //
 // Eric Meehan
+// 2/12/21
+//
 //
 
 #ifndef Entry_h

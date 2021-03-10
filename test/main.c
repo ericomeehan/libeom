@@ -1,11 +1,15 @@
-// 
-// Homo Deus
-// 2/18/21
 //
-// Homo Deus C Library
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
 // main.c
 //
 // Eric Meehan
+// 2/18/21
+//
 //
 
 #include "../Cryptography/ArbitrarilyPreciseInteger.h"

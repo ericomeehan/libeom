@@ -1,12 +1,16 @@
-// 
-// Homo Deus
-// 3/5/21
 //
-// Homo Deus C Library
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
 // Cryptography.h
 //
 // Eric Meehan
-// 
+// 3/5/21
+//
+//
 
 
 

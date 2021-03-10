@@ -1,11 +1,15 @@
 //
-// Homo Deus
-// 2/3/21
+// ==================================
+// libeom
 //
-// Homo Deus C Library
+// an open source c library.
+// ==================================
+//
 // Queue.h
 //
 // Eric Meehan
+// 2/3/21
+//
 //
 
 /*

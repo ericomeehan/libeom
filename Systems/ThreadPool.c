@@ -1,12 +1,16 @@
-// 
-// Homo Deus
-// 2/26/21
 //
-// Homo Deus C Library
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
 // ThreadPool.c
 //
 // Eric Meehan
-// 
+// 2/26/21
+//
+//
 
 
 

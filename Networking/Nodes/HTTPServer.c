@@ -1,12 +1,16 @@
-// 
-// Homo Deus
-// 2/21/21
 //
-// Homo Deus C Library
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
 // HTTPServer.c
 //
 // Eric Meehan
-// 
+// 2/21/21
+//
+//
 
 /*
  The HTTPServer struct is the basis for servers intended to read and recieve HTTP protocols.

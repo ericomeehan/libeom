@@ -1,11 +1,15 @@
 //
-// Homo Deus
-// 1/31/21
+// ==================================
+// libeom
 //
-// Homo Deus C Library
+// an open source c library.
+// ==================================
+//
 // LinkedList.h
 //
 // Eric Meehan
+// 1/31/21
+//
 //
 
 /*

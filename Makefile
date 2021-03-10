@@ -1,7 +1,7 @@
 # Homo Deus
-# hdelibc
+# libeom
 #
-# Makefile for hdelibc - provides options for creating a static library out of all or part of hdelibc
+# Makefile for libeom - provides options for creating a static library out of all or part of libeom
 #
 # 2021-02-12
 # Eric Meehan
@@ -22,7 +22,7 @@ all: Main DataStructures Networking Systems
 
 # Creates just the top level static library
 Main: DataStructuresSub NetworkingSub SystemsSub
-		ar rcs hdelibc.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Client.o Server.o HTTPServer.o HTTPRequest.o ThreadPool.o
+		ar rcs libeom.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Client.o Server.o HTTPServer.o HTTPRequest.o ThreadPool.o
 
 
 

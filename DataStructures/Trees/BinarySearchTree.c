@@ -8,6 +8,20 @@
 // Eric Meehan
 //
 
+//
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
+// BinarySearchTree.c
+//
+// Eric Meehan
+// 2/11/21
+//
+//
+
 #include "BinarySearchTree.h"
 
 #include <stdlib.h>

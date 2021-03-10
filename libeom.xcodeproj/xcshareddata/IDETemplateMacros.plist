@@ -3,16 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>FILEHEADER</key>
-	<string> 
-// Homo Deus
-// ___DATE___
+	<string>
+// ==================================
+// libeom
 //
-// Homo Deus C Library
+// an open source c library.
+// ==================================
+//
 // ___FILENAME___
 //
 // ___FULLUSERNAME___
-// 
-
-</string>
+// ___DATE___
+//
+//</string>
 </dict>
 </plist>

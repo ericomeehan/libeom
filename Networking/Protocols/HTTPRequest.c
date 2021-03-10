@@ -8,6 +8,20 @@
 // Eric Meehan
 //
 
+//
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
+// HTTPRequest.c
+//
+// Eric Meehan
+// 2/9/21
+//
+//
+
 #include "HTTPRequest.h"
 
 #include "../../DataStructures/Lists/Queue.h"

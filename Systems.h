@@ -1,12 +1,16 @@
-// 
-// Homo Deus
-// 3/1/21
 //
-// Homo Deus C Library
-// System.h
+// ==================================
+// libeom
+//
+// an open source c library.
+// ==================================
+//
+// Systems.h
 //
 // Eric Meehan
-// 
+// 3/1/21
+//
+//
 
 
 
