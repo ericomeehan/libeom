@@ -20,11 +20,9 @@
 #define Networking_h
 
 #include "Networking/Nodes/Server.h"
-
 #include "Networking/Nodes/Client.h"
 
 #include "Networking/Protocols/HTTPRequest.h"
-
 #include "Networking/Nodes/HTTPServer.h"
 
 #endif /* Networking_h */

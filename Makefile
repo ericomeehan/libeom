@@ -1,4 +1,3 @@
-# Homo Deus
 # libeom
 #
 # Makefile for libeom - provides options for creating a static library out of all or part of libeom
