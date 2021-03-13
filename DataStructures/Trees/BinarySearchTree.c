@@ -25,14 +25,14 @@
 #include "BinarySearchTree.h"
 
 #include <stdlib.h>
-
+#include <string.h>
 #include <stdio.h>
 
 // MARK: PROTOTYPES
 
 // MARK: Private Member Methods
 
-struct Node * create_node_bst(void *data, int size);
+struct Node * create_node_bst(void *data, unsigned long size);
 void destroy_node_bst(struct Node *node_to_destroy);
 struct Node * iterate_bst(struct BinarySearchTree *tree, struct Node *cursor, void *data, int *direction);
 void recursive_tree_destruction(struct Node *node);
@@ -41,7 +41,7 @@ void recursive_tree_destruction(struct Node *node);
 // MARK: Public Member Methods
 
 void * search_bst(struct BinarySearchTree *tree, void *data);
-void insert_bst(struct BinarySearchTree *tree, void *data, int size);
+void insert_bst(struct BinarySearchTree *tree, void *data, unsigned long size);
 
 
 // MARK: DEFINITIONS
@@ -68,7 +68,7 @@ void binary_search_tree_destructor(struct BinarySearchTree tree)
 // MARK: Private Member Methods
 
 // The create_node allocates space on the heap for a node and uses the Node constructor to instantiate it.
-struct Node * create_node_bst(void *data, int size)
+struct Node * create_node_bst(void *data, unsigned long size)
 {
     // Allocate space.
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
@@ -169,7 +169,7 @@ void * search_bst(struct BinarySearchTree *tree, void *data)
 }
 
 // The insert function adds new nodes to the tree by finding their proper position.
-void insert_bst(struct BinarySearchTree *tree, void *data, int size)
+void insert_bst(struct BinarySearchTree *tree, void *data, unsigned long size)
 {
     // Check if this is the first node in the tree.
     if (!tree->head)
@@ -192,5 +192,24 @@ void insert_bst(struct BinarySearchTree *tree, void *data, int size)
             cursor->previous = create_node_bst(data, size);
         }
         // Duplicate nodes will not be added.
+    }
+}
+
+
+int binary_search_tree_str_compare(void *data_one, void *data_two)
+{
+    int comparison = strcmp(data_one, data_two);
+    
+    if (comparison > 0)
+    {
+        return 1;
+    }
+    else if (comparison < 0)
+    {
+        return -1;
+    }
+    else
+    {
+        return 0;
     }
 }

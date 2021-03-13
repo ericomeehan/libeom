@@ -40,7 +40,7 @@ struct BinarySearchTree
     // The search function finds a node in the tree, returning its data or NULL if not found.
     void * (*search)(struct BinarySearchTree *tree, void *data);
     // The insert function adds a new node to the tree.  Since memory allocation is handled by the node constructor, the size of this node's data must be specified.
-    void (*insert)(struct BinarySearchTree *tree, void *data, int size);
+    void (*insert)(struct BinarySearchTree *tree, void *data, unsigned long size);
 };
 
 // MARK: CONSTRUCTORS
