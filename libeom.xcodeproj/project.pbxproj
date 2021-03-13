@@ -36,6 +36,8 @@
 		07BF312325C732C300A41C5D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF312125C732C300A41C5D /* LinkedList.c */; };
 		07BF315925CB344800A41C5D /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF315725CB344800A41C5D /* Queue.h */; };
 		07BF315A25CB344800A41C5D /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF315825CB344800A41C5D /* Queue.c */; };
+		07CE3A2C25FD2B9F00A0DC89 /* PeerToPeer.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CE3A2A25FD2B9F00A0DC89 /* PeerToPeer.h */; };
+		07CE3A2D25FD2B9F00A0DC89 /* PeerToPeer.c in Sources */ = {isa = PBXBuildFile; fileRef = 07CE3A2B25FD2B9F00A0DC89 /* PeerToPeer.c */; };
 		07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EEDA1E25D3244700078FED /* HTTPRequest.h */; };
 		07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */ = {isa = PBXBuildFile; fileRef = 07EEDA1F25D3244700078FED /* HTTPRequest.c */; };
 /* End PBXBuildFile section */
@@ -87,6 +89,8 @@
 		07BF312125C732C300A41C5D /* LinkedList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkedList.c; sourceTree = "<group>"; };
 		07BF315725CB344800A41C5D /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		07BF315825CB344800A41C5D /* Queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
+		07CE3A2A25FD2B9F00A0DC89 /* PeerToPeer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeerToPeer.h; sourceTree = "<group>"; };
+		07CE3A2B25FD2B9F00A0DC89 /* PeerToPeer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PeerToPeer.c; sourceTree = "<group>"; };
 		07EEDA1E25D3244700078FED /* HTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
 		07EEDA1F25D3244700078FED /* HTTPRequest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HTTPRequest.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +134,8 @@
 				0734F71825F7D1730099F481 /* Client.c */,
 				0702102525E2E7FA00D60AD5 /* HTTPServer.h */,
 				0702102625E2E7FA00D60AD5 /* HTTPServer.c */,
+				07CE3A2A25FD2B9F00A0DC89 /* PeerToPeer.h */,
+				07CE3A2B25FD2B9F00A0DC89 /* PeerToPeer.c */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				0768DF3325D5C5EF00410685 /* BinarySearchTree.h in Headers */,
 				07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */,
 				07BF312225C732C300A41C5D /* LinkedList.h in Headers */,
+				07CE3A2C25FD2B9F00A0DC89 /* PeerToPeer.h in Headers */,
 				073F391325EDECC9009E4178 /* Systems.h in Headers */,
 				0734F71925F7D1730099F481 /* Client.h in Headers */,
 			);
@@ -376,6 +383,7 @@
 				07BF312325C732C300A41C5D /* LinkedList.c in Sources */,
 				0768DF3425D5C5EF00410685 /* BinarySearchTree.c in Sources */,
 				076C3A3C25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c in Sources */,
+				07CE3A2D25FD2B9F00A0DC89 /* PeerToPeer.c in Sources */,
 				0737A2F925D06F85009CCE74 /* Server.c in Sources */,
 				0773445F25E9782F0063555F /* ThreadPool.c in Sources */,
 				0702102825E2E7FA00D60AD5 /* HTTPServer.c in Sources */,
