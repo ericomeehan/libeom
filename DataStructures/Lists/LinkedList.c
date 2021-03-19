@@ -33,6 +33,7 @@ struct Node * iterate_ll(struct LinkedList *linked_list, int index);
 void insert_ll(struct LinkedList *linked_list, int index, void *data, unsigned long size);
 void remove_node_ll(struct LinkedList *linked_list, int index);
 void * retrieve_ll(struct LinkedList *linked_list, int index);
+void sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b));
 
 
 // MARK: CONSTRUCTORS
@@ -46,6 +47,7 @@ struct LinkedList linked_list_constructor()
     new_list.insert = insert_ll;
     new_list.remove = remove_node_ll;
     new_list.retrieve = retrieve_ll;
+    new_list.sort = sort_ll;
     
     return new_list;
 }
@@ -170,5 +172,30 @@ void * retrieve_ll(struct LinkedList *linked_list, int index)
     else
     {
         return NULL;
+    }
+}
+
+// The sort function is used to sort data in the list.
+// Note that this is a permanent change and items added after sorting will not themselves be sorted.
+// Bubble sort.
+void sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b))
+{
+    // Outer for loop for first cursor.
+    for (int i = 0; i < linked_list->length; i++)
+    {
+        struct Node *cursor_i = iterate_ll(linked_list, i);
+        // Inner for loop for comparison cursor.
+        for (int n = i + 1; n < linked_list->length; n++)
+        {
+            struct Node *cursor_n = iterate_ll(linked_list, n);
+            // Use the user-provided compare function to compare the first and comparison cursors.
+            if (compare(cursor_i->data, cursor_n->data) == 1)
+            {
+                // Swap them.
+                void *temporary = cursor_n->data;
+                cursor_n->data = cursor_i->data;
+                cursor_i->data = temporary;
+            }
+        }
     }
 }

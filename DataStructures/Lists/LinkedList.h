@@ -50,6 +50,8 @@ struct LinkedList
     void (*remove)(struct LinkedList *linked_list, int index);
     // Retrieve allows data in the chain to be accessed
     void * (*retrieve)(struct LinkedList *linked_list, int index);
+    // Sort the list (bubble sort).
+    void (*sort)(struct LinkedList *linked_list, int (*compare)(void *a, void *b));
 };
 
 

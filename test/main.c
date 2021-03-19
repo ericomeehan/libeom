@@ -70,8 +70,46 @@ void * client_function(void *arg)
     }
 }
 
+int int_compare(void *a, void *b)
+{
+    int *x = a;
+    int *y = b;
+    if (*x > *y)
+    {
+        return 1;
+    }
+    else if (*x < *y)
+    {
+        return -1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 int main()
 {
-    struct PeerToPeer p2p = peer_to_peer_constructor(AF_INET, SOCK_STREAM, 0, 1248, INADDR_ANY, server_function, client_function);
-    p2p.user_portal(&p2p);
+//    struct PeerToPeer p2p = peer_to_peer_constructor(AF_INET, SOCK_STREAM, 0, 1248, INADDR_ANY, server_function, client_function);
+//    p2p.user_portal(&p2p);
+    struct LinkedList ll = linked_list_constructor();
+    
+    for (int i = 10; i > 0; i--)
+    {
+        ll.insert(&ll, 10 - i, &i, sizeof(i));
+    }
+    
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", *(int *)ll.retrieve(&ll, i));
+    }
+    
+    printf("\n\n");
+    
+    ll.sort(&ll, int_compare);
+    
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", *(int *)ll.retrieve(&ll, i));
+    }
 }

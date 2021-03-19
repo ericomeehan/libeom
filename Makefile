@@ -21,7 +21,7 @@ all: Main DataStructures Networking Systems
 
 # Creates just the top level static library
 Main: DataStructuresSub NetworkingSub SystemsSub
-		ar rcs libeom.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Client.o Server.o HTTPServer.o HTTPRequest.o ThreadPool.o
+		ar rcs libeom.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Client.o Server.o HTTPServer.o HTTPRequest.o ThreadPool.o PeerToPeer.o
 
 
 
@@ -62,16 +62,19 @@ Dictionary:
 
 # Creates the networking library
 Networking: NetworkingSub
-	ar rcs Networking/Networking.a Server.o HTTPRequest.o HTTPServer.o Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Client.o Dictionary.o ThreadPool.o
+	ar rcs Networking/Networking.a Server.o HTTPRequest.o HTTPServer.o Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Client.o Dictionary.o ThreadPool.o PeerToPeer.o
 
 # Sub components of the networking library
-NetworkingSub: DataStructuresSub SystemsSub Server Client HTTPRequest HTTPServer
+NetworkingSub: DataStructuresSub SystemsSub Server Client HTTPRequest HTTPServer PeerToPeer
 
 Server:
 	gcc -c Networking/Nodes/Server.c
 	
 Client:
 	gcc -c Networking/Nodes/Client.c
+
+PeerToPeer:
+	gcc -c Networking/Nodex/PeerToPeer.c
 
 HTTPServer:
 	gcc -c Networking/Nodes/HTTPServer.c
