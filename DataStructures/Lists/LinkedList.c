@@ -34,7 +34,7 @@ void insert_ll(struct LinkedList *linked_list, int index, void *data, unsigned l
 void remove_node_ll(struct LinkedList *linked_list, int index);
 void * retrieve_ll(struct LinkedList *linked_list, int index);
 void sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b));
-
+short search_ll(struct LinkedList *linked_list, void *query, int (*compare)(void *a, void *b));
 
 // MARK: CONSTRUCTORS
 
@@ -48,6 +48,7 @@ struct LinkedList linked_list_constructor()
     new_list.remove = remove_node_ll;
     new_list.retrieve = retrieve_ll;
     new_list.sort = sort_ll;
+    new_list.search = search_ll;
     
     return new_list;
 }
@@ -199,3 +200,45 @@ void sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b))
         }
     }
 }
+
+short search_ll(struct LinkedList *linked_list, void *query, int (*compare)(void *a, void *b))
+{
+    int position = linked_list->length/2;
+    int min_checked = 0;
+    int max_checked = linked_list->length;
+    while (max_checked > min_checked)
+    {
+        void *data = linked_list->retrieve(linked_list, position);
+        if (compare(data, query) == 1)
+        {
+            max_checked = position;
+            if (position != (min_checked + position) / 2)
+            {
+                position = (min_checked + position) / 2;
+            }
+            else
+            {
+                break;
+            }
+        }
+        else if (compare(data, query) == -1)
+        {
+            min_checked = position;
+            if (position != (max_checked + position) / 2)
+            {
+                position = (max_checked + position) / 2;
+            }
+            else
+            {
+                break;
+            }
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+//0 1 2 3 4 5 6 7 8 9

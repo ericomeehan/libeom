@@ -94,22 +94,22 @@ int main()
 //    p2p.user_portal(&p2p);
     struct LinkedList ll = linked_list_constructor();
     
-    for (int i = 10; i > 0; i--)
+    for (int i = 0; i < 20; i++)
     {
-        ll.insert(&ll, 10 - i, &i, sizeof(i));
+        ll.insert(&ll, i, &i, sizeof(i));
     }
-    
-    for (int i = 0; i < 10; i++)
-    {
-        printf("%d\n", *(int *)ll.retrieve(&ll, i));
-    }
-    
-    printf("\n\n");
-    
+        
     ll.sort(&ll, int_compare);
     
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 25; i++)
     {
-        printf("%d\n", *(int *)ll.retrieve(&ll, i));
+        if (ll.search(&ll, &i, int_compare))
+        {
+            printf("%d is in the list.\n", i);
+        }
+        else
+        {
+            printf("%d is not in the list.\n", i);
+        }
     }
 }
