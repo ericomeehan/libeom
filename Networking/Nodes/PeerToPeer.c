@@ -22,6 +22,8 @@
 
 void user_portal(struct PeerToPeer *peer_to_peer);
 
+char *known_hosts(struct Server *server, char *request_string);
+
 struct PeerToPeer peer_to_peer_constructor(int domain, int service, int protocol, int port, u_long interface, void * (*server_function)(void *arg), void * (*client_function)(void *arg))
 {
     struct PeerToPeer peer_to_peer;
@@ -35,6 +37,7 @@ struct PeerToPeer peer_to_peer_constructor(int domain, int service, int protocol
     peer_to_peer.known_hosts.insert(&peer_to_peer.known_hosts, 0, "127.0.0.1", 10);
     
     peer_to_peer.server = server_constructor(domain, service, protocol, interface, port, 20);
+    peer_to_peer.server.register_routes(&peer_to_peer.server, known_hosts, "/known_hosts");
 
     
     peer_to_peer.user_portal = user_portal;

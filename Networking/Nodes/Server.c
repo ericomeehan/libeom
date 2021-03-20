@@ -21,6 +21,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void register_routes_server(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path);
 
@@ -42,6 +43,11 @@ struct Server server_constructor(int domain, int service, int protocol, u_long i
     server.address.sin_addr.s_addr = htonl(interface);
     // Create a socket for the server.
     server.socket = socket(domain, service, protocol);
+    // Initialize the dictionary.
+    server.routes = dictionary_constructor(compare_string_keys);
+    
+    server.register_routes = register_routes_server;
+    
     // Confirm the connection was successful.
     if (server.socket == 0)
     {
@@ -67,5 +73,6 @@ struct Server server_constructor(int domain, int service, int protocol, u_long i
 
 void register_routes_server(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path)
 {
+    server->routes.insert(&server->routes, path, sizeof(char[strlen(path)]), route_function, sizeof(route_function));
     
 }

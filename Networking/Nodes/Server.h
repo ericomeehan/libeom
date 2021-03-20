@@ -20,6 +20,8 @@
 #ifndef Server_h
 #define Server_h
 
+#include "../../DataStructures/Dictionary/Dictionary.h"
+
 #include <sys/socket.h>
 #include <netinet/in.h>
 
@@ -36,6 +38,8 @@ struct Server
     int backlog;
     struct sockaddr_in address;
     int socket;
+    
+    struct Dictionary routes;
     
     void (*register_routes)(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path);
 };
