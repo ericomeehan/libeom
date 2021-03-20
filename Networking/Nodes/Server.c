@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void register_routes_server(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path);
+void register_routes_server(struct Server *server, char *(*route_function)(void *arg), char *path);
 
 // MARK: CONSTRUCTORS
 
@@ -71,8 +71,10 @@ struct Server server_constructor(int domain, int service, int protocol, u_long i
 
 
 
-void register_routes_server(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path)
+void register_routes_server(struct Server *server, char *(*route_function)(void *arg), char *path)
 {
-    server->routes.insert(&server->routes, path, sizeof(char[strlen(path)]), route_function, sizeof(route_function));
+    struct ServerRoute route;
+    route.route_function = route_function;
+    server->routes.insert(&server->routes, path, sizeof(char[strlen(path)]), &route, sizeof(route));
     
 }

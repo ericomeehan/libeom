@@ -15,12 +15,13 @@
 #include "../libeom.h"
 
 #include "../Networking/Nodes/PeerToPeer.h"
+#
 
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <arpa/inet.h>
-
+#include <time.h>
 
 
 void * server_function(void *arg)
@@ -36,8 +37,19 @@ void * server_function(void *arg)
         memset(request, 0, 255);
         read(client, request, 255);
         char *client_address = inet_ntoa(p2p->server.address.sin_addr);
-        printf("\t\t\t%s says: %s\n", client_address, request);
-        close(client);
+        
+        if (strcmp(request, "/known_hosts\n") == 0)
+        {
+            struct ServerRoute *route = p2p->server.routes.search(&p2p->server.routes, request, sizeof(request));
+            char *response = route->route_function(arg);
+            write(client, response, sizeof(char[strlen(response)]));
+            close(client);
+        }
+        else
+        {
+            printf("\t\t\t%s says: %s\n", client_address, request);
+            close(client);
+        }
         short found = 0;
         for (int i = 0; i < p2p->known_hosts.length && !found; i++)
         {
@@ -59,13 +71,20 @@ void * client_function(void *arg)
     struct PeerToPeer *p2p = arg;
     while (1)
     {
+        clock_t start = clock();
         struct Client client = client_constructor(p2p->domain, p2p->service, p2p->protocol, p2p->port, p2p->interface);
         char request[255];
         memset(request, 0, 255);
         fgets(request, 255, stdin);
         for (int i = 0; i < p2p->known_hosts.length; i++)
         {
-            client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), request);
+            printf("%s\n", client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, i), request));
+        }
+        clock_t end = clock();
+        if ((end - start) > 500)
+        {
+            char *response = client.request(&client, p2p->known_hosts.retrieve(&p2p->known_hosts, 0), "/known_hosts\n");
+            printf("%s\n", response);
         }
     }
 }
@@ -90,26 +109,6 @@ int int_compare(void *a, void *b)
 
 int main()
 {
-//    struct PeerToPeer p2p = peer_to_peer_constructor(AF_INET, SOCK_STREAM, 0, 1248, INADDR_ANY, server_function, client_function);
-//    p2p.user_portal(&p2p);
-    struct LinkedList ll = linked_list_constructor();
-    
-    for (int i = 0; i < 20; i++)
-    {
-        ll.insert(&ll, i, &i, sizeof(i));
-    }
-        
-    ll.sort(&ll, int_compare);
-    
-    for (int i = 0; i < 25; i++)
-    {
-        if (ll.search(&ll, &i, int_compare))
-        {
-            printf("%d is in the list.\n", i);
-        }
-        else
-        {
-            printf("%d is not in the list.\n", i);
-        }
-    }
+    struct PeerToPeer p2p = peer_to_peer_constructor(AF_INET, SOCK_STREAM, 0, 1248, INADDR_ANY, server_function, client_function);
+    p2p.user_portal(&p2p);
 }
