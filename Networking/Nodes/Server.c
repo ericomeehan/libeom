@@ -22,6 +22,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void register_routes_server(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path);
+
 // MARK: CONSTRUCTORS
 
 struct Server server_constructor(int domain, int service, int protocol, u_long interface, int port, int backlog)
@@ -59,4 +61,11 @@ struct Server server_constructor(int domain, int service, int protocol, u_long i
         exit(1);
     }
     return server;
+}
+
+
+
+void register_routes_server(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path)
+{
+    
 }

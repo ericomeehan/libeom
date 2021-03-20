@@ -36,6 +36,8 @@ struct Server
     int backlog;
     struct sockaddr_in address;
     int socket;
+    
+    void (*register_routes)(struct Server *server, char *(*route_function)(struct Server *server, char *request_string), char *path);
 };
 
 
