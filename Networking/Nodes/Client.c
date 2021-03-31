@@ -27,7 +27,7 @@
 
 // MARK: FUNCTION PROTOTYPES
 
-char * request(struct Client *client, char *server_ip, char *request);
+char * request(struct Client *client, char *server_ip, void *request, unsigned long size);
 
 // MARK: CONSTRUCTORS
 
@@ -47,7 +47,7 @@ struct Client client_constructor(int domain, int service, int protocol, int port
 
 // MARK: PRIVATE MEMBER METHODS
 
-char * request(struct Client *client, char *server_ip, char *request)
+char * request(struct Client *client, char *server_ip, void *request, unsigned long size)
 {
     // Create an address struct for the server.
     struct sockaddr_in server_address;
@@ -59,7 +59,7 @@ char * request(struct Client *client, char *server_ip, char *request)
     inet_pton(client->domain, server_ip, &server_address.sin_addr);
     connect(client->socket, (struct sockaddr*)&server_address, sizeof(server_address));
     // Send the request;
-    send(client->socket, request, strlen(request), 0);
+    send(client->socket, request, size, 0);
     // Read the response.
     char *response = malloc(30000);
     read(client->socket, response, 30000);

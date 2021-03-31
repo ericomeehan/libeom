@@ -74,7 +74,7 @@ Client:
 	gcc -c Networking/Nodes/Client.c
 
 PeerToPeer:
-	gcc -c Networking/Nodex/PeerToPeer.c
+	gcc -c Networking/Nodes/PeerToPeer.c
 
 HTTPServer:
 	gcc -c Networking/Nodes/HTTPServer.c
@@ -97,6 +97,7 @@ SystemsSub: ThreadPool
 
 ThreadPool:
 	gcc -c Systems/ThreadPool.c
+
 
 
 

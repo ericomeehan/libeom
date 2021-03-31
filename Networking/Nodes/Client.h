@@ -39,7 +39,7 @@ struct Client
     u_long interface;
     /* PUBLIC MEMBER METHODS */
     // The request method allows a client to make a request of a specified server.
-    char * (*request)(struct Client *client, char *server_ip, char *request);
+    char * (*request)(struct Client *client, char *server_ip, void *request, unsigned long size);
 };
 
 

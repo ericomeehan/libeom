@@ -33,8 +33,8 @@ struct Node * iterate_ll(struct LinkedList *linked_list, int index);
 void insert_ll(struct LinkedList *linked_list, int index, void *data, unsigned long size);
 void remove_node_ll(struct LinkedList *linked_list, int index);
 void * retrieve_ll(struct LinkedList *linked_list, int index);
-void sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b));
-short search_ll(struct LinkedList *linked_list, void *query, int (*compare)(void *a, void *b));
+void bubble_sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b));
+short binary_search_ll(struct LinkedList *linked_list, void *query, int (*compare)(void *a, void *b));
 
 // MARK: CONSTRUCTORS
 
@@ -47,8 +47,8 @@ struct LinkedList linked_list_constructor()
     new_list.insert = insert_ll;
     new_list.remove = remove_node_ll;
     new_list.retrieve = retrieve_ll;
-    new_list.sort = sort_ll;
-    new_list.search = search_ll;
+    new_list.sort = bubble_sort_ll;
+    new_list.search = binary_search_ll;
     
     return new_list;
 }
@@ -179,29 +179,24 @@ void * retrieve_ll(struct LinkedList *linked_list, int index)
 // The sort function is used to sort data in the list.
 // Note that this is a permanent change and items added after sorting will not themselves be sorted.
 // Bubble sort.
-void sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b))
+void bubble_sort_ll(struct LinkedList *linked_list, int (*compare)(void *a, void *b))
 {
-    // Outer for loop for first cursor.
-    for (int i = 0; i < linked_list->length; i++)
+    for (struct Node *i = linked_list->retrieve(linked_list, 0); i; i = i->next)
     {
-        struct Node *cursor_i = iterate_ll(linked_list, i);
-        // Inner for loop for comparison cursor.
-        for (int n = i + 1; n < linked_list->length; n++)
+        for (struct Node *n = i->next; n; n = n->next)
         {
-            struct Node *cursor_n = iterate_ll(linked_list, n);
-            // Use the user-provided compare function to compare the first and comparison cursors.
-            if (compare(cursor_i->data, cursor_n->data) == 1)
+            if (compare(i->data, n->data) > 0)
             {
-                // Swap them.
-                void *temporary = cursor_n->data;
-                cursor_n->data = cursor_i->data;
-                cursor_i->data = temporary;
+               // Swap them.
+                void *temporary = n->data;
+                n->data = i->data;
+                i->data = temporary;
             }
         }
     }
 }
 
-short search_ll(struct LinkedList *linked_list, void *query, int (*compare)(void *a, void *b))
+short binary_search_ll(struct LinkedList *linked_list, void *query, int (*compare)(void *a, void *b))
 {
     int position = linked_list->length/2;
     int min_checked = 0;
@@ -240,5 +235,3 @@ short search_ll(struct LinkedList *linked_list, void *query, int (*compare)(void
     }
     return 0;
 }
-
-//0 1 2 3 4 5 6 7 8 9
