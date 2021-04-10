@@ -21,10 +21,11 @@
 #include <string.h>
 #include <pthread.h>
 
+// MARK: PRIVATE MEMBER PROTOTYPES
 void user_portal(struct PeerToPeer *peer_to_peer);
-
 char * known_hosts(void *arg);
 
+// MARK: DATA TYPES
 struct PeerToPeer peer_to_peer_constructor(int domain, int service, int protocol, int port, u_long interface, void * (*server_function)(void *arg), void * (*client_function)(void *arg))
 {
     struct PeerToPeer peer_to_peer;
@@ -48,15 +49,19 @@ struct PeerToPeer peer_to_peer_constructor(int domain, int service, int protocol
     return peer_to_peer;
 }
 
+// MARK: PRIVATE MEMBER METHODS
 void user_portal(struct PeerToPeer *peer_to_peer)
 {
+    // Launch the server as a thread.
     pthread_t server_thread;
     pthread_create(&server_thread, NULL, peer_to_peer->server_function, peer_to_peer);
+    // Launch the client.
     peer_to_peer->client_function(peer_to_peer);
 }
 
 char * known_hosts(void *arg)
 {
+    // Returns a list of Nodes that have previously been communicated with.
     printf("Known hosts requested\n");
     struct PeerToPeer *peer_to_peer = arg;
     char *hosts = malloc(peer_to_peer->known_hosts.length * 17);

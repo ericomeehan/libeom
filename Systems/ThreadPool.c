@@ -19,15 +19,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+// MARK: PRIVATE MEMBER PROTOTYPES
 void * generic_thread_function(void *arg);
 void add_work(struct ThreadPool *thread_pool, struct ThreadJob thread_job);
 
+// MARK: CONSTRUCTORS
 struct ThreadPool thread_pool_constructor(int num_threads)
 {
+    // Initialize a thread pool and prepare it for work.
     struct ThreadPool thread_pool;
     thread_pool.num_threads = num_threads;
     thread_pool.active = 1;
     thread_pool.work = queue_constructor();
+    // Initialize the pthread muteces.
     thread_pool.lock = (pthread_mutex_t)PTHREAD_MUTEX_INITIALIZER;
     thread_pool.signal = (pthread_cond_t)PTHREAD_COND_INITIALIZER;
     pthread_mutex_lock(&thread_pool.lock);
@@ -64,16 +69,25 @@ void thread_pool_destructor(struct ThreadPool *thread_pool)
     queue_destructor(&thread_pool->work);
 }
 
+// MARK: PRIVATE MEMBER METHODS
+
+// The generic_thread_function is required as the argument for creating each thread in the pool.
+// It allows each thread to await a ThreadJob object and execute its contents.
+// This make the pool dynamic - any function can be passed as a job.
 void * generic_thread_function(void *arg)
 {
     struct ThreadPool *thread_pool = (struct ThreadPool *)arg;
     while (thread_pool->active == 1)
     {
+        // Lock the work queue.
         pthread_mutex_lock(&thread_pool->lock);
         pthread_cond_wait(&thread_pool->signal, &thread_pool->lock);
+        // Get the job from the queue.
         struct ThreadJob thread_job = *(struct ThreadJob *)thread_pool->work.peek(&thread_pool->work);
+        // Unlock the queue.
         thread_pool->work.pop(&thread_pool->work);
         pthread_mutex_unlock(&thread_pool->lock);
+        // Execute the job.
         if (thread_job.job)
         {
             thread_job.job(thread_job.arg);
@@ -82,6 +96,7 @@ void * generic_thread_function(void *arg)
     return NULL;
 }
 
+// Adds work to the queue in a thread safe way.
 void add_work(struct ThreadPool *thread_pool, struct ThreadJob thread_job)
 {
     pthread_mutex_lock(&thread_pool->lock);

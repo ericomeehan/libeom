@@ -12,6 +12,11 @@
 //
 //
 
+/*
+ The PeerToPeer object is intended as a wrapper for a node with client and server capacities.
+ The object requires the client and server functionalities be defined by the user.
+ */
+
 #ifndef PeerToPeer_h
 #define PeerToPeer_h
 
@@ -29,6 +34,7 @@ struct PeerToPeer
     int port;
     u_long interface;
     
+    // The user_portal function is activated to launch the server and client applications.
     void (*user_portal)(struct PeerToPeer *peer_to_peer);
     void * (*server_function)(void *arg);
     void * (*client_function)(void *arg);

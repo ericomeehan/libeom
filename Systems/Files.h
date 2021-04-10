@@ -12,6 +12,10 @@
 //
 //
 
+/*
+ Some basic utilities for dealing with files.
+ */
+
 #ifndef Files_h
 #define Files_h
 
