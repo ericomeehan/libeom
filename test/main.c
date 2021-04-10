@@ -131,6 +131,7 @@ int int_compare(void *a, void *b)
 
 int main()
 {
+    printf("%lu, %lu\n", sizeof(struct BlockHeaders), sizeof(struct Block));
     struct PeerToPeer p2p = peer_to_peer_constructor(AF_INET, SOCK_STREAM, 0, 1248, INADDR_ANY, server_function, client_function);
     p2p.user_portal(&p2p);
     
