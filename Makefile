@@ -21,7 +21,7 @@ all: Main DataStructures Networking Systems
 
 # Creates just the top level static library
 Main: DataStructuresSub NetworkingSub SystemsSub
-		ar rcs libeom.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Client.o Server.o HTTPServer.o HTTPRequest.o ThreadPool.o PeerToPeer.o
+		ar rcs libeom.a Node.o LinkedList.o Queue.o BinarySearchTree.o Entry.o Dictionary.o Client.o Server.o HTTPServer.o HTTPRequest.o ThreadPool.o PeerToPeer.o Files.o
 
 
 
@@ -90,15 +90,16 @@ HTTPRequest:
 
 # Creates the systems library
 Systems: SystemsSub
-	ar rcs Systems/System.a ThreadPool.o
+	ar rcs Systems/System.a ThreadPool.o Files.o
 
 # Sub components of the systems library
-SystemsSub: ThreadPool
+SystemsSub: ThreadPool Files
 
 ThreadPool:
 	gcc -c Systems/ThreadPool.c
 
-
+Files:
+	gcc -c Systems/Files.c
 
 
 ###############################################################################
