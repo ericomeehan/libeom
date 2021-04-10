@@ -33,6 +33,8 @@
 		0773445F25E9782F0063555F /* ThreadPool.c in Sources */ = {isa = PBXBuildFile; fileRef = 0773445D25E9782F0063555F /* ThreadPool.c */; };
 		077A17CE25DF0574009D89B5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 077A17CD25DF0574009D89B5 /* main.c */; };
 		077A17D525DF0676009D89B5 /* liblibeom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BF311125C72F0D00A41C5D /* liblibeom.a */; };
+		07A23B1D262220510087BE64 /* Terminal.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A23B1B262220510087BE64 /* Terminal.h */; };
+		07A23B1E262220510087BE64 /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = 07A23B1C262220510087BE64 /* Terminal.c */; };
 		07BF311C25C7324200A41C5D /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF311A25C7324200A41C5D /* Node.h */; };
 		07BF312225C732C300A41C5D /* LinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF312025C732C300A41C5D /* LinkedList.h */; };
 		07BF312325C732C300A41C5D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 07BF312125C732C300A41C5D /* LinkedList.c */; };
@@ -87,6 +89,8 @@
 		0773445D25E9782F0063555F /* ThreadPool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ThreadPool.c; sourceTree = "<group>"; };
 		077A17CB25DF0574009D89B5 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		077A17CD25DF0574009D89B5 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		07A23B1B262220510087BE64 /* Terminal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terminal.h; sourceTree = "<group>"; };
+		07A23B1C262220510087BE64 /* Terminal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Terminal.c; sourceTree = "<group>"; };
 		07BF311125C72F0D00A41C5D /* liblibeom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibeom.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07BF311A25C7324200A41C5D /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		07BF312025C732C300A41C5D /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 				0705734526173CDB00D9EE57 /* Files.c */,
 				0773445C25E9782F0063555F /* ThreadPool.h */,
 				0773445D25E9782F0063555F /* ThreadPool.c */,
+				07A23B1B262220510087BE64 /* Terminal.h */,
+				07A23B1C262220510087BE64 /* Terminal.c */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				0737A2F825D06F85009CCE74 /* Server.h in Headers */,
 				0773445E25E9782F0063555F /* ThreadPool.h in Headers */,
 				076C3A3B25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.h in Headers */,
+				07A23B1D262220510087BE64 /* Terminal.h in Headers */,
 				07BF311C25C7324200A41C5D /* Node.h in Headers */,
 				0768DF3325D5C5EF00410685 /* BinarySearchTree.h in Headers */,
 				07EEDA2025D3244700078FED /* HTTPRequest.h in Headers */,
@@ -384,6 +391,7 @@
 			files = (
 				0734F71A25F7D1730099F481 /* Client.c in Sources */,
 				070A830125D70F5F00E97DE2 /* Entry.c in Sources */,
+				07A23B1E262220510087BE64 /* Terminal.c in Sources */,
 				07BF315A25CB344800A41C5D /* Queue.c in Sources */,
 				0705734726173CDB00D9EE57 /* Files.c in Sources */,
 				07EEDA2125D3244700078FED /* HTTPRequest.c in Sources */,
