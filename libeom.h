@@ -21,6 +21,10 @@
 
 #include "Systems.h"
 
+typedef unsigned char byte;
+typedef short bool;
 
+#define true 1;
+#define false 0;
 
 #endif /* libeom_h */
