@@ -21,6 +21,8 @@
 
 #include "Systems.h"
 
+#include "Interfaces.h"
+
 typedef unsigned char byte;
 typedef short bool;
 

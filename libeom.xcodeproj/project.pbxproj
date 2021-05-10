@@ -33,6 +33,7 @@
 		076C3A3C25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c in Sources */ = {isa = PBXBuildFile; fileRef = 076C3A3A25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c */; };
 		0773445E25E9782F0063555F /* ThreadPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 0773445C25E9782F0063555F /* ThreadPool.h */; };
 		0773445F25E9782F0063555F /* ThreadPool.c in Sources */ = {isa = PBXBuildFile; fileRef = 0773445D25E9782F0063555F /* ThreadPool.c */; };
+		0779DBAC264995E700B9A249 /* Interfaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 0779DBAA264995E700B9A249 /* Interfaces.h */; };
 		077A17CE25DF0574009D89B5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 077A17CD25DF0574009D89B5 /* main.c */; };
 		077A17D525DF0676009D89B5 /* liblibeom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BF311125C72F0D00A41C5D /* liblibeom.a */; };
 		07BF311C25C7324200A41C5D /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BF311A25C7324200A41C5D /* Node.h */; };
@@ -89,6 +90,7 @@
 		076C3A3A25F16CB400DF3B58 /* ArbitrarilyPreciseInteger.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ArbitrarilyPreciseInteger.c; sourceTree = "<group>"; };
 		0773445C25E9782F0063555F /* ThreadPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadPool.h; sourceTree = "<group>"; };
 		0773445D25E9782F0063555F /* ThreadPool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ThreadPool.c; sourceTree = "<group>"; };
+		0779DBAA264995E700B9A249 /* Interfaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Interfaces.h; sourceTree = "<group>"; };
 		077A17CB25DF0574009D89B5 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		077A17CD25DF0574009D89B5 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		07BF311125C72F0D00A41C5D /* liblibeom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibeom.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +253,7 @@
 				076C3A3825F16C9800DF3B58 /* Cryptography */,
 				070A830A25D7752400E97DE2 /* DataStructures.h */,
 				07BF311925C7321500A41C5D /* DataStructures */,
+				0779DBAA264995E700B9A249 /* Interfaces.h */,
 				070A9B5C262B18580001DA90 /* Interfaces */,
 				070A831D25D8318B00E97DE2 /* Networking.h */,
 				0737A2F525D06F73009CCE74 /* Networking */,
@@ -296,6 +299,7 @@
 				070A830C25D7752400E97DE2 /* DataStructures.h in Headers */,
 				070A830025D70F5F00E97DE2 /* Entry.h in Headers */,
 				0702102725E2E7FA00D60AD5 /* HTTPServer.h in Headers */,
+				0779DBAC264995E700B9A249 /* Interfaces.h in Headers */,
 				0705734626173CDB00D9EE57 /* Files.h in Headers */,
 				070A831F25D8318B00E97DE2 /* Networking.h in Headers */,
 				0737A2F825D06F85009CCE74 /* Server.h in Headers */,
