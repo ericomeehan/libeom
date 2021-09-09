@@ -13,7 +13,17 @@ If you save the libeom directory to your default include location, there is no n
 make
 ```
 
-This will generate a static library for libeom as a whole, as well as static libraries for each of the sub-modules individually.  If you only wish to compile the top-level static library, use:
+This will generate a static library for libeom as a whole, as well as static libraries for each of the sub-modules individually. 
+If you want to have debug information use:
+
+```
+make debug
+```
+
+This is similar to just running ```make``` but all the library and submodules will have debug information.
+
+
+If you only wish to compile the top-level static library, use:
 
 ```
 make Main

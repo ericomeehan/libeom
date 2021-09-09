@@ -13,7 +13,12 @@
 # Create top level static library and all sub-libraries
 all: Main DataStructures Networking Systems
 
+###############################################################################
+# MARK debug_all
+###############################################################################
+debug: DEBUG = -g
 
+debug: all
 
 ###############################################################################
 # MARK: MAIN
@@ -37,22 +42,22 @@ DataStructures: DataStructuresSub
 DataStructuresSub: Node LinkedList Queue BinarySearchTree Entry Dictionary
 
 Node:
-	gcc -c DataStructures/Common/Node.c
+	gcc $(DEBUG) -c DataStructures/Common/Node.c
 
 LinkedList:
-	gcc -c DataStructures/Lists/LinkedList.c
+	gcc $(DEBUG) -c DataStructures/Lists/LinkedList.c
 
 Queue:
-	gcc -c DataStructures/Lists/Queue.c
+	gcc $(DEBUG) -c DataStructures/Lists/Queue.c
 	
 BinarySearchTree:
-	gcc -c DataStructures/Trees/BinarySearchTree.c
+	gcc $(DEBUG) -c DataStructures/Trees/BinarySearchTree.c
 
 Entry:
-	gcc -c DataStructures/Dictionary/Entry.c
+	gcc $(DEBUG) -c DataStructures/Dictionary/Entry.c
 
 Dictionary:
-	gcc -c DataStructures/Dictionary/Dictionary.c
+	gcc $(DEBUG) -c DataStructures/Dictionary/Dictionary.c
 	
 	
 	
@@ -68,19 +73,19 @@ Networking: NetworkingSub
 NetworkingSub: DataStructuresSub SystemsSub Server Client HTTPRequest HTTPServer PeerToPeer
 
 Server:
-	gcc -c Networking/Nodes/Server.c
+	gcc $(DEBUG) -c Networking/Nodes/Server.c
 	
 Client:
-	gcc -c Networking/Nodes/Client.c
+	gcc $(DEBUG) -c Networking/Nodes/Client.c
 
 PeerToPeer:
-	gcc -c Networking/Nodes/PeerToPeer.c
+	gcc $(DEBUG) -c Networking/Nodes/PeerToPeer.c
 
 HTTPServer:
-	gcc -c Networking/Nodes/HTTPServer.c
+	gcc $(DEBUG) -c Networking/Nodes/HTTPServer.c
 
 HTTPRequest:
-	gcc -c Networking/Protocols/HTTPRequest.c
+	gcc $(DEBUG) -c Networking/Protocols/HTTPRequest.c
 	
 	
 
@@ -96,10 +101,10 @@ Systems: SystemsSub
 SystemsSub: ThreadPool Files
 
 ThreadPool:
-	gcc -c Systems/ThreadPool.c
+	gcc $(DEBUG) -c Systems/ThreadPool.c
 
 Files:
-	gcc -c Systems/Files.c
+	gcc $(DEBUG) -c Systems/Files.c
 
 
 ###############################################################################
