@@ -36,6 +36,7 @@ struct Client client_constructor(int domain, int service, int protocol, int port
     // Instantiate a client object.
     struct Client client;
     client.domain = domain;
+    client.service = service;
     client.port = port;
     client.interface = interface;
     // Establish a socket connection.
