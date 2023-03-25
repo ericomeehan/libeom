@@ -120,12 +120,12 @@ clean:
 
 test: test_p2p test_linked_list test_queue
 
-test_p2p:
+test_p2p: test/main.c
 	gcc -o test_p2p test/main.c libeom.a
 
-test_linked_list:
+test_linked_list: test/test_linked_list.c
 	gcc -o test_linked_list test/test_linked_list.c libeom.a
 
-test_queue:
+test_queue: test/test_queue.c
 	gcc -o test_queue test/test_queue.c libeom.a
 
