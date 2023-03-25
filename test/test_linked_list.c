@@ -14,21 +14,26 @@ int main()
 {
     struct LinkedList list = linked_list_constructor();
 
-    for (int i = 0; i < 10; i++)
+    for (int index = 0; index < 10; index++)
     {
-        int *x = (int *)malloc(sizeof(int));
-        *x = i;
-        list.insert(&list, i, x, sizeof(int));
+        int *data = (int *)malloc(sizeof(int));
+        *data = index;
+        list.insert(&list, index, data, sizeof(int));
     }
 
     list.remove(&list, 3);
     list.remove(&list, 7);
 
-    for (int i = 0; i < 8; i++)
+    for (int index = 0; index < list.length; index++)
     {
-        printf("%d\n", *(int *)list.retrieve(&list, i));
+        void *value = list.retrieve(&list, index);
+        if (value) // NULL denotes no node exists
+        {
+            printf("%d\n", *(int *)list.retrieve(&list, index));
+        }
     }
 
+    // Should return NULL
     list.retrieve(&list, 100);
 
     linked_list_destructor(&list);

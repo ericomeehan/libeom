@@ -16,15 +16,15 @@ int main()
 
     for (int i = 0; i < 10; i++)
     {
-        int *x = (int *)malloc(sizeof(int));
-        *x = i;
-        queue.push(&queue, x, sizeof(x));
+        int *data = (int *)malloc(sizeof(int));
+        *data = i;
+        queue.push(&queue, data, sizeof(data));
     }
 
     queue.pop(&queue);
     queue.pop(&queue);
 
-    for (int i = 0; i < 8; i++)
+    while (queue.list.length)
     {
         printf("%d\n", *(int *)queue.peek(&queue));
         queue.pop(&queue);
