@@ -18,7 +18,6 @@ int main()
     {
         int *x = (int *)malloc(sizeof(int));
         *x = i;
-        printf("> i=%d, x=%p, *x=%d\n", i, x, *x);
         queue.push(&queue, x, sizeof(x));
     }
 
