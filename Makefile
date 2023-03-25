@@ -106,6 +106,22 @@ Files:
 # MARK: CLEAN
 ###############################################################################
 
-# Remove all .o files
+# Remove all .o files and test files
 clean:
-	rm *.o
+	rm -f *.o
+	rm -f test_linked_list
+	rm -f test_queue
+
+
+###############################################################################
+# MARK: TEST
+###############################################################################
+
+test: test_linked_list test_queue
+
+test_linked_list:
+	gcc -o test_linked_list test/test_linked_list.c libeom.a
+
+test_queue:
+	gcc -o test_queue test/test_queue.c libeom.a
+
