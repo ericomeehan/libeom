@@ -109,6 +109,7 @@ Files:
 # Remove all .o files and test files
 clean:
 	rm -f *.o
+	rm -f test_p2p
 	rm -f test_linked_list
 	rm -f test_queue
 
@@ -117,7 +118,10 @@ clean:
 # MARK: TEST
 ###############################################################################
 
-test: test_linked_list test_queue
+test: test_p2p test_linked_list test_queue
+
+test_p2p:
+	gcc -o test_p2p test/main.c libeom.a
 
 test_linked_list:
 	gcc -o test_linked_list test/test_linked_list.c libeom.a

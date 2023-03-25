@@ -17,7 +17,6 @@
  In general, client objects are used to send requests to server APIs.
  */
 
-
 #include "Client.h"
 
 #include <stdlib.h>
@@ -27,7 +26,7 @@
 
 // MARK: FUNCTION PROTOTYPES
 
-char * request(struct Client *client, char *server_ip, void *request, unsigned long size);
+char *request(struct Client *client, char *server_ip, void *request, unsigned long size);
 
 // MARK: CONSTRUCTORS
 
@@ -36,6 +35,7 @@ struct Client client_constructor(int domain, int service, int protocol, int port
     // Instantiate a client object.
     struct Client client;
     client.domain = domain;
+    client.service = service;
     client.port = port;
     client.interface = interface;
     // Establish a socket connection.
@@ -47,7 +47,7 @@ struct Client client_constructor(int domain, int service, int protocol, int port
 
 // MARK: PRIVATE MEMBER METHODS
 
-char * request(struct Client *client, char *server_ip, void *request, unsigned long size)
+char *request(struct Client *client, char *server_ip, void *request, unsigned long size)
 {
     // Create an address struct for the server.
     struct sockaddr_in server_address;
@@ -57,7 +57,7 @@ char * request(struct Client *client, char *server_ip, void *request, unsigned l
     server_address.sin_addr.s_addr = (int)client->interface;
     // Make the connection.
     inet_pton(client->domain, server_ip, &server_address.sin_addr);
-    connect(client->socket, (struct sockaddr*)&server_address, sizeof(server_address));
+    connect(client->socket, (struct sockaddr *)&server_address, sizeof(server_address));
     // Send the request;
     send(client->socket, request, size, 0);
     // Read the response.
